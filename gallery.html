@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery | Malee Hospitality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+      <div class="header-container">
+        <div class="brand-identity">
+          <a href="index.html" class="logo-link">
+            <img
+              src="https://maleehospitality.asia/wp-content/uploads/2023/06/Logo-Black-1.png"
+              alt="Malee Hospitality Corporate Logo"
+              class="brand-logo-img"
+            />
+          </a>
+        </div>
+
+        <nav class="navigation-menu" aria-label="Main Navigation">
+          <div class="nav-item">
+            <a href="index.html" class="nav-link active">HOME</a>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              DESTINATIONS
+              <span class="arrow-indicator" aria-hidden="true">▼</span>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#">Thailand</a>
+              <a href="#">Bali</a>
+              <a href="#">Singapore</a>
+              <a href="#">Malaysia</a>
+              <a href="#">Vietnam</a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              PACKAGES <span class="arrow-indicator" aria-hidden="true">▼</span>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#">Honeymoon Escapes</a>
+              <a href="#">Family Adventures</a>
+              <a href="#">Corporate Groups</a>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+          </div>
+          <div class="nav-item">
+            <a href="contact.html" class="nav-link contact-button">CONTACT</a>
+          </div>
+
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle Dark Mode"
+          >
+            <span class="toggle-icon">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <div class="gallery-page-wrapper">
+        <section class="gallery-hero-banner">
+            <div class="banner-content">
+                <h1 class="banner-heading">Travel Stories</h1>
+                <p class="banner-subheading">A visual glimpse into curated experiences across top Asian destinations.</p>
+            </div>
+        </section>
+
+        <section class="main-wrapper">
+            <div class="gallery-filter-container">
+                <button class="gallery-filter-btn active" data-tag="all">All Photos</button>
+                <button class="gallery-filter-btn" data-tag="thailand">Thailand</button>
+                <button class="gallery-filter-btn" data-tag="singapore">Singapore</button>
+                <button class="gallery-filter-btn" data-tag="malaysia">Malaysia</button>
+                <button class="gallery-filter-btn" data-tag="other">Other</button>
+            </div>
+
+            <div id="galleryGrid" class="gallery-masonry-grid" style="margin-top: 30px;">
+                <div class="gallery-item" data-location="thailand">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Wat-Pho-1.webp" alt="Wat Pho Temple Thailand">
+                    <div class="item-overlay"><span>Wat Pho Temple Tour 🌟</span></div>
+                </div>
+                <div class="gallery-item" data-location="thailand">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Grand-Palace-Visit.webp" alt="Grand Palace Bangkok Thailand">
+                    <div class="item-overlay"><span>The Grand Palace Experience 🏰</span></div>
+                </div>
+                <div class="gallery-item" data-location="thailand">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Bangkok-Temple-Visit-2.webp" alt="Bangkok Temple Visit">
+                    <div class="item-overlay"><span>Cultural Temple Journey 🙏</span></div>
+                </div>
+                <div class="gallery-item" data-location="thailand">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/bangkok.webp" alt="Bangkok City Landscape">
+                    <div class="item-overlay"><span>Vibrant Bangkok Cityscape 🏙️</span></div>
+                </div>
+
+                <div class="gallery-item" data-location="singapore">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Night-Safari.webp" alt="Singapore Night Safari">
+                    <div class="item-overlay"><span>Singapore Night Safari Adventure 🌙</span></div>
+                </div>
+                <div class="gallery-item" data-location="singapore">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Singapore-Tour.webp" alt="Singapore City Highlights Tour">
+                    <div class="item-overlay"><span>Discover Singapore Highlights 🦁</span></div>
+                </div>
+
+                <div class="gallery-item" data-location="malaysia">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Batu-Caves.webp" alt="Batu Caves Malaysia">
+                    <div class="item-overlay"><span>Majestic Batu Caves 🪔</span></div>
+                </div>
+                <div class="gallery-item" data-location="malaysia">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/KL-Twin-towers-Tour.webp" alt="Kuala Lumpur Twin Towers Tour">
+                    <div class="item-overlay"><span>Petronas Twin Towers Tour 🏢</span></div>
+                </div>
+                <div class="gallery-item" data-location="malaysia">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/KL-City-Tour.webp" alt="KL City Tour">
+                    <div class="item-overlay"><span>Kuala Lumpur City Excursion 🚗</span></div>
+                </div>
+                <div class="gallery-item" data-location="malaysia">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Malaysia-Tour.webp" alt="Malaysia Travel Experience">
+                    <div class="item-overlay"><span>Wonderful Malaysia Journey ✨</span></div>
+                </div>
+                <div class="gallery-item" data-location="malaysia">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/12/Kuala-Lumpur-Malaysia.png" alt="Kuala Lumpur Skyline">
+                    <div class="item-overlay"><span>Kuala Lumpur Horizons 🌅</span></div>
+                </div>
+
+                <div class="gallery-item" data-location="other">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Exotic Tropical Resort Gateway">
+                    <div class="item-overlay"><span>Hidden Island Getaways 🏝️</span></div>
+                </div>
+                <div class="gallery-item" data-location="other">
+                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80" alt="Beautiful South East Asia Temple Landscape">
+                    <div class="item-overlay"><span>Regional Heritage Tours ⛩️</span></div>
+                </div>
+
+                <div class="gallery-item hidden-batch" data-location="thailand">
+                    <img src="https://maleehospitality.asia/wp-content/uploads/2025/11/Grand-Palace-Visit.webp" alt="Grand Palace Visit Bangkok">
+                    <div class="item-overlay"><span>Grand Palace Exploration 🏰</span></div>
+                </div>
+            </div>
+
+            <div class="gallery-action-wrapper">
+                <button id="btnLoadMore" class="btn-load-gallery">Load More Experiences</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="galleryLightbox" class="gallery-lightbox" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox Modal">&times;</button>
+        <button id="lightboxPrev" class="lightbox-arrow arrow-left" aria-label="Previous Image">&#10094;</button>
+        
+        <div class="lightbox-content-frame">
+            <img id="lightboxActiveImg" src="" alt="Active Lightbox Target Image">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+        
+        <button id="lightboxNext" class="lightbox-arrow arrow-right" aria-label="Next Image">&#10095;</button>
+    </div>
+
+   <footer id="contact" class="immersive-footer">
+      <div class="footer-hero-cta">
+        <h2>Start Planning Your Next Adventure</h2>
+        <p>Reach out directly to coordinate your tour layout.</p>
+      </div>
+
+      <div class="contact-box-grid">
+        <div class="contact-pill-item">
+          <h5>📍 Office Address</h5>
+          <p>
+            02nd Floor, Next To Chamnan Phenjati Business Centre, Rama IX Rd,
+            Huai Khwang, Bangkok 10310
+          </p>
+        </div>
+        <div class="contact-pill-item">
+          <h5>📞 Call Us</h5>
+          <p>Thailand: +66 63 836 0210<br />India: +91 80776 05404</p>
+        </div>
+        <div class="contact-pill-item">
+          <h5>📧 Email Us</h5>
+          <p>Ops@maleehospitality.asia<br />Delops2@maleehospitality.asia</p>
+        </div>
+        <div class="contact-pill-item">
+          <h5>🌐 Website</h5>
+          <p>www.maleehospitality.asia</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-links-container">
+        <div class="brand-column">
+          <div class="footer-logo">Malee Hospitality</div>
+          <p>
+            Highly affordable. Professionally managed. Truly unforgettable
+            travel management across Southeast Asia destinations.
+          </p>
+
+          <div class="footer-social-wrapper">
+            <a
+              href="https://www.facebook.com/malee.hospitality.7/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Facebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/maleehospitality_/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Instagram"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://in.linkedin.com/company/malee-hospitality-dmc"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on LinkedIn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://in.pinterest.com/maleehospitalityofficial/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Pinterest"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="links-column">
+          <h4>Top Destinations</h4>
+          <a href="#">Thailand</a>
+          <a href="#">Singapore</a>
+          <a href="#">Malaysia</a>
+          <a href="#">Bali (Indonesia)</a>
+          <a href="#">Vietnam</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Company Info</h4>
+          <a href="index.html">About us</a>
+          <a href="#packages">Packages</a>
+          <a href="contact.html">Contact</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Legal & Trust</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms & Conditions</a>
+          <a href="cancellation-refund.html">Cancellation Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Premium Standards</h4>
+          <p style="font-size: 13px; color: #a0aec0; line-height: 1.6">
+            ⭐ Premium Hospitality<br />⭐ Visa Documentation Support<br />⭐
+            Localized DMC Expertise
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Malee Hospitality</div>
+        <div class="legal-links-column">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-conditions.html">Terms</a>
+          <a href="cancellation-refund.html">Refunds</a>
+        </div>
+        <div>Travel smart. Travel seamlessly. Crafted with absolute care.</div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
