@@ -618,3 +618,446 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// Add this to your existing app.js to enable smooth scroll animations
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    
+    const elementObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once it has faded in
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    fadeElements.forEach(el => {
+        elementObserver.observe(el);
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    /* ==========================================================================
+       1. HERO SLIDER ENGINE
+       ========================================================================== */
+    const slides = document.querySelectorAll(".slide");
+    const nextBtn = document.getElementById("nextSlide");
+    const prevBtn = document.getElementById("prevSlide");
+    const dotsContainer = document.getElementById("dotsContainer");
+    
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval;
+        const intervalTime = 6000; // 6 seconds per slide
+
+        // Initialize Dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+            dot.addEventListener("click", () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        const updateSliderUI = () => {
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
+            
+            slides[currentSlide].classList.add("active");
+            dots[currentSlide].classList.add("active");
+        };
+
+        const nextSlide = () => {
+            currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+            updateSliderUI();
+            resetInterval();
+        };
+
+        const prevSlide = () => {
+            currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+            updateSliderUI();
+            resetInterval();
+        };
+
+        const goToSlide = (index) => {
+            currentSlide = index;
+            updateSliderUI();
+            resetInterval();
+        };
+
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        };
+
+        // Event Listeners for Arrows
+        if(nextBtn) nextBtn.addEventListener("click", nextSlide);
+        if(prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+        // Start Autoplay
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    /* ==========================================================================
+       2. SMOOTH SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+       ========================================================================== */
+    const animatedElements = document.querySelectorAll(
+        '.package-card, .why-card, .about-content, .about-img-holder, .info-card, .social-card'
+    );
+
+    // Add base class for CSS to target
+    animatedElements.forEach(el => el.classList.add('smooth-reveal'));
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15, // Trigger when 15% visible
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    animatedElements.forEach(el => revealObserver.observe(el));
+
+    /* ==========================================================================
+       3. FAQ ACCORDION LOGIC
+       ========================================================================== */
+    const accordions = document.querySelectorAll(".accordion-header");
+
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", function() {
+            // Close other open panels for a cleaner experience (optional)
+            accordions.forEach(other => {
+                if (other !== this && other.parentElement.classList.contains("active")) {
+                    other.parentElement.classList.remove("active");
+                    other.setAttribute("aria-expanded", "false");
+                    other.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            const panel = this.nextElementSibling;
+            const item = this.parentElement;
+            const isActive = item.classList.toggle("active");
+            
+            this.setAttribute("aria-expanded", isActive);
+
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+
+    /* ==========================================================================
+       4. THEME TOGGLE (DARK/LIGHT MODE)
+       ========================================================================== */
+    const themeToggle = document.getElementById("themeToggle");
+    const rootHtml = document.documentElement;
+    const toggleIcon = themeToggle ? themeToggle.querySelector('.toggle-icon') : null;
+
+    // Check local storage for saved preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        rootHtml.setAttribute("data-theme", savedTheme);
+        if(toggleIcon) toggleIcon.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = rootHtml.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            rootHtml.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            
+            if(toggleIcon) toggleIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+        });
+    }
+
+    /* ==========================================================================
+       5. FILTER PILLS LOGIC (PACKAGES)
+       ========================================================================== */
+    const filterPills = document.querySelectorAll(".pill");
+    const packageCards = document.querySelectorAll(".package-card");
+
+    if (filterPills.length > 0 && packageCards.length > 0) {
+        filterPills.forEach(pill => {
+            pill.addEventListener("click", () => {
+                // Update active state on pills
+                filterPills.forEach(p => p.classList.remove("active"));
+                pill.classList.add("active");
+
+                const filterValue = pill.getAttribute("data-filter");
+
+                // Filter cards
+                packageCards.forEach(card => {
+                    if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
+                        card.classList.remove("force-hide-element");
+                        // Slight delay to allow smooth reflow
+                        setTimeout(() => card.style.opacity = "1", 50); 
+                    } else {
+                        card.style.opacity = "0";
+                        setTimeout(() => card.classList.add("force-hide-element"), 300);
+                    }
+                });
+            });
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    /* ==========================================================================
+       1. SMOOTH SCROLL REVEAL (Intersection Observer)
+       ========================================================================== */
+    // Target all elements that should fade up as you scroll
+    const animatedElements = document.querySelectorAll('.smooth-reveal, .package-card, .why-card, .team-card');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15, // Trigger when 15% visible
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    animatedElements.forEach(el => {
+        // Ensure they have the base class before observing
+        el.classList.add('smooth-reveal');
+        revealObserver.observe(el);
+    });
+
+    /* ==========================================================================
+       2. NUMBER COUNTER ANIMATION
+       ========================================================================== */
+    const counters = document.querySelectorAll('.counter');
+    const animationSpeed = 200; // Lower number = faster counting
+
+    const runCounter = (counter) => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            
+            // Calculate increment based on target
+            const increment = target / animationSpeed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10); // Run every 10ms
+            } else {
+                counter.innerText = target; // Lock exactly to the target number
+            }
+        };
+        updateCount();
+    };
+
+    // Use Intersection Observer so it only counts when the user sees it
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                runCounter(counter);
+                observer.unobserve(counter); // Stop observing so it doesn't recount
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.5, // Wait until the stats block is 50% visible
+        rootMargin: "0px"
+    });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    /* ==========================================================================
+       3. THEME TOGGLE (DARK/LIGHT MODE)
+       ========================================================================== */
+    const themeToggle = document.getElementById("themeToggle");
+    const rootHtml = document.documentElement;
+    const toggleIcon = themeToggle ? themeToggle.querySelector('.toggle-icon') : null;
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        rootHtml.setAttribute("data-theme", savedTheme);
+        if(toggleIcon) toggleIcon.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = rootHtml.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            rootHtml.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            
+            if(toggleIcon) toggleIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+        });
+    }
+
+    /* ==========================================================================
+       4. FAQ ACCORDION LOGIC
+       ========================================================================== */
+    const accordions = document.querySelectorAll(".accordion-header");
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", function() {
+            // Close others
+            accordions.forEach(other => {
+                if (other !== this && other.parentElement.classList.contains("active")) {
+                    other.parentElement.classList.remove("active");
+                    other.setAttribute("aria-expanded", "false");
+                    other.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            const panel = this.nextElementSibling;
+            const item = this.parentElement;
+            const isActive = item.classList.toggle("active");
+            
+            this.setAttribute("aria-expanded", isActive);
+            panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    /* ==========================================================================
+       1. SMOOTH SCROLL REVEAL (Intersection Observer)
+       ========================================================================== */
+    // Target all elements that have the smooth-reveal class
+    const animatedElements = document.querySelectorAll('.smooth-reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15, // Trigger when 15% visible
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    animatedElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    /* ==========================================================================
+       2. NUMBER COUNTER ANIMATION
+       ========================================================================== */
+    const counters = document.querySelectorAll('.counter');
+    const animationSpeed = 200; // Lower number = faster counting
+
+    const runCounter = (counter) => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            
+            // Calculate increment based on target
+            const increment = target / animationSpeed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10); // Run every 10ms
+            } else {
+                counter.innerText = target; // Lock exactly to the target number
+            }
+        };
+        updateCount();
+    };
+
+    // Use Intersection Observer so it only counts when the user sees it
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                runCounter(counter);
+                observer.unobserve(counter); // Stop observing so it doesn't recount
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.5, // Wait until the stats block is 50% visible
+        rootMargin: "0px"
+    });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    /* ==========================================================================
+       3. THEME TOGGLE (DARK/LIGHT MODE)
+       ========================================================================== */
+    const themeToggle = document.getElementById("themeToggle");
+    const rootHtml = document.documentElement;
+    const toggleIcon = themeToggle ? themeToggle.querySelector('.toggle-icon') : null;
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        rootHtml.setAttribute("data-theme", savedTheme);
+        if(toggleIcon) toggleIcon.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = rootHtml.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            rootHtml.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            
+            if(toggleIcon) toggleIcon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+        });
+    }
+
+    /* ==========================================================================
+       4. FAQ ACCORDION LOGIC (If needed globally)
+       ========================================================================== */
+    const accordions = document.querySelectorAll(".accordion-header");
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", function() {
+            // Close others
+            accordions.forEach(other => {
+                if (other !== this && other.parentElement.classList.contains("active")) {
+                    other.parentElement.classList.remove("active");
+                    other.setAttribute("aria-expanded", "false");
+                    other.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            const panel = this.nextElementSibling;
+            const item = this.parentElement;
+            const isActive = item.classList.toggle("active");
+            
+            this.setAttribute("aria-expanded", isActive);
+            panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
+        });
+    });
+});
