@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Malee Hospitality</title>
-    <meta name="description" content="Learn more about Malee Hospitality, your trusted travel partner in Asia." />
+    <meta
+      name="description"
+      content="Learn more about Malee Hospitality, your trusted travel partner in Asia."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -16,13 +22,29 @@
       <div class="header-container">
         <div class="brand-identity">
           <a href="index.html" class="logo-link">
-            <img src="https://maleehospitality.asia/wp-content/uploads/2023/06/Logo-Black-1.png" alt="Malee Hospitality Corporate Logo" class="brand-logo-img" />
+            <img
+              src="https://maleehospitality.asia/wp-content/uploads/2023/06/Logo-Black-1.png"
+              alt="Malee Hospitality Corporate Logo"
+              class="brand-logo-img"
+            />
           </a>
         </div>
+
         <nav class="navigation-menu" aria-label="Main Navigation">
-          <div class="nav-item"><a href="index.html" class="nav-link">HOME</a></div>
+          <div class="nav-item">
+            <a href="index.html" class="nav-link active">HOME</a>
+          </div>
+
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle">DESTINATIONS <span class="arrow-indicator">▼</span></a>
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              DESTINATIONS
+              <span class="arrow-indicator" aria-hidden="true">▼</span>
+            </a>
             <div class="dropdown-menu">
               <a href="#">Thailand</a>
               <a href="#">Bali</a>
@@ -31,17 +53,38 @@
               <a href="#">Vietnam</a>
             </div>
           </div>
+
           <div class="nav-item dropdown">
-            <a href="package.html" class="nav-link dropdown-toggle">PACKAGES <span class="arrow-indicator">▼</span></a>
+            <a
+              href="package.html"
+              class="nav-link dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              PACKAGES <span class="arrow-indicator" aria-hidden="true">▼</span>
+            </a>
             <div class="dropdown-menu">
               <a href="#">Honeymoon Escapes</a>
               <a href="#">Family Adventures</a>
               <a href="#">Corporate Groups</a>
             </div>
           </div>
-          <div class="nav-item"><a href="gallery.html" class="nav-link">GALLERY</a></div>
-          <div class="nav-item"><a href="contact.html" class="nav-link contact-button">CONTACT</a></div>
-          <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+
+          <div class="nav-item">
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+          </div>
+          <div class="nav-item">
+            <a href="about.html" class="nav-link">ABOUT US</a>
+          </div>
+          <div class="nav-item">
+            <a href="contact.html" class="nav-link contact-button">CONTACT</a>
+          </div>
+
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle Dark Mode"
+          >
             <span class="toggle-icon">🌙</span>
           </button>
         </nav>
@@ -53,7 +96,9 @@
       <section class="about-hero-banner smooth-reveal">
         <div class="banner-content">
           <h1 class="banner-heading">About Us</h1>
-          <p class="banner-subheading">Crafting unforgettable experiences across Southeast Asia.</p>
+          <p class="banner-subheading">
+            Crafting unforgettable experiences across Southeast Asia.
+          </p>
         </div>
       </section>
 
@@ -61,13 +106,26 @@
       <section class="section-container">
         <div class="about-grid">
           <div class="about-img-holder smooth-reveal">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Travel and Exploration" />
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+              alt="Travel and Exploration"
+            />
           </div>
           <div class="about-content smooth-reveal delay-1">
             <h4 class="section-kicker">COMPANY PROFILE</h4>
-            <h2>United By Excellence.<br>Driven By Innovation.</h2>
-            <p>Malee Hospitality is a premium destination management company based in Bangkok, offering bespoke travel solutions for individuals and corporate groups. We provide a comprehensive range of travel services designed to create memories that last forever.</p>
-            <p>Our operational framework ensures that every journey is highly affordable, professionally managed, and truly unforgettable. We handle everything from complex corporate movements to intimate family vacations with absolute precision.</p>
+            <h2>United By Excellence.<br />Driven By Innovation.</h2>
+            <p>
+              Malee Hospitality is a premium destination management company
+              based in Bangkok, offering bespoke travel solutions for
+              individuals and corporate groups. We provide a comprehensive range
+              of travel services designed to create memories that last forever.
+            </p>
+            <p>
+              Our operational framework ensures that every journey is highly
+              affordable, professionally managed, and truly unforgettable. We
+              handle everything from complex corporate movements to intimate
+              family vacations with absolute precision.
+            </p>
           </div>
         </div>
       </section>
@@ -78,12 +136,20 @@
           <div class="vm-card smooth-reveal">
             <div class="vm-icon">🎯</div>
             <h3>Our Mission</h3>
-            <p>To deliver unparalleled travel experiences by combining localized expertise with global standards of service, ensuring every journey is seamless, enriching, and flawlessly executed.</p>
+            <p>
+              To deliver unparalleled travel experiences by combining localized
+              expertise with global standards of service, ensuring every journey
+              is seamless, enriching, and flawlessly executed.
+            </p>
           </div>
           <div class="vm-card smooth-reveal delay-1">
             <div class="vm-icon">👁️</div>
             <h3>Our Vision</h3>
-            <p>To be the most trusted and innovative Destination Management Company in Asia, setting new benchmarks for corporate and leisure travel through sustainability, technology, and deep human empathy.</p>
+            <p>
+              To be the most trusted and innovative Destination Management
+              Company in Asia, setting new benchmarks for corporate and leisure
+              travel through sustainability, technology, and deep human empathy.
+            </p>
           </div>
         </div>
       </section>
@@ -92,23 +158,34 @@
       <section class="section-container bg-muted smooth-section">
         <div class="section-header center-align smooth-reveal">
           <h2>Our Divisions</h2>
-          <p class="center-subtitle">Specialized departments for tailored travel experiences</p>
+          <p class="center-subtitle">
+            Specialized departments for tailored travel experiences
+          </p>
         </div>
         <div class="why-grid divisions-grid">
           <div class="why-card minimal-card smooth-reveal">
             <div class="why-icon">🌏</div>
             <h3>Tours & Leisure</h3>
-            <p>Customized international holiday packages, sightseeing experiences, and guided destination tours.</p>
+            <p>
+              Customized international holiday packages, sightseeing
+              experiences, and guided destination tours.
+            </p>
           </div>
           <div class="why-card minimal-card smooth-reveal delay-1">
             <div class="why-icon">💼</div>
             <h3>Corporate & MICE</h3>
-            <p>End-to-end management for corporate groups, incentive trips, meetings, and global exhibitions.</p>
+            <p>
+              End-to-end management for corporate groups, incentive trips,
+              meetings, and global exhibitions.
+            </p>
           </div>
           <div class="why-card minimal-card smooth-reveal delay-2">
             <div class="why-icon">✨</div>
             <h3>Destination Weddings</h3>
-            <p>Complete logistical support, hotel takeovers, and ground handling for seamless destination weddings.</p>
+            <p>
+              Complete logistical support, hotel takeovers, and ground handling
+              for seamless destination weddings.
+            </p>
           </div>
         </div>
       </section>
@@ -119,11 +196,23 @@
           <div class="about-content smooth-reveal">
             <h4 class="section-kicker">OUR ETHOS</h4>
             <h2>Company Philosophy</h2>
-            <p>Our philosophy is rooted in a deep commitment to service excellence and transparency. We believe that modern travel management requires a perfect blend of local expertise, digital innovation, and human empathy.</p>
-            <p>We do not just sell itineraries; we craft holistic travel environments. From the moment you begin planning to your safe return, our standard is nothing short of perfection.</p>
+            <p>
+              Our philosophy is rooted in a deep commitment to service
+              excellence and transparency. We believe that modern travel
+              management requires a perfect blend of local expertise, digital
+              innovation, and human empathy.
+            </p>
+            <p>
+              We do not just sell itineraries; we craft holistic travel
+              environments. From the moment you begin planning to your safe
+              return, our standard is nothing short of perfection.
+            </p>
           </div>
           <div class="about-img-holder smooth-reveal delay-1">
-            <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80" alt="Luxury Travel Experience" />
+            <img
+              src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80"
+              alt="Luxury Travel Experience"
+            />
           </div>
         </div>
       </section>
@@ -132,28 +221,42 @@
       <section class="section-container bg-muted smooth-section">
         <div class="section-header center-align smooth-reveal">
           <h2>Our Core Values</h2>
-          <p class="center-subtitle">The principles that guide every itinerary we craft</p>
+          <p class="center-subtitle">
+            The principles that guide every itinerary we craft
+          </p>
         </div>
         <div class="values-grid">
           <div class="value-box smooth-reveal">
             <div class="value-icon">🤝</div>
             <h4>Integrity</h4>
-            <p>Transparency in pricing and absolute honesty in all our partner and client relationships.</p>
+            <p>
+              Transparency in pricing and absolute honesty in all our partner
+              and client relationships.
+            </p>
           </div>
           <div class="value-box smooth-reveal delay-1">
             <div class="value-icon">⭐</div>
             <h4>Excellence</h4>
-            <p>Going beyond the expected to deliver premium, uncompromising quality in every service.</p>
+            <p>
+              Going beyond the expected to deliver premium, uncompromising
+              quality in every service.
+            </p>
           </div>
           <div class="value-box smooth-reveal delay-2">
             <div class="value-icon">📍</div>
             <h4>Local Expertise</h4>
-            <p>Deep-rooted local knowledge ensuring authentic and immersive destination experiences.</p>
+            <p>
+              Deep-rooted local knowledge ensuring authentic and immersive
+              destination experiences.
+            </p>
           </div>
           <div class="value-box smooth-reveal delay-3">
             <div class="value-icon">🛡️</div>
             <h4>Reliability</h4>
-            <p>24/7 on-ground support and bulletproof logistics so you can travel with total peace of mind.</p>
+            <p>
+              24/7 on-ground support and bulletproof logistics so you can travel
+              with total peace of mind.
+            </p>
           </div>
         </div>
       </section>
@@ -164,15 +267,21 @@
           <h2>Celebrating Unforgettable Experiences Since 2020!</h2>
           <div class="stats-grid">
             <div class="stat-item">
-              <span class="stat-number"><span class="counter" data-target="50">0</span>+</span>
+              <span class="stat-number"
+                ><span class="counter" data-target="50">0</span>+</span
+              >
               <span class="stat-label">Destinations</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number"><span class="counter" data-target="300">0</span>+</span>
+              <span class="stat-number"
+                ><span class="counter" data-target="300">0</span>+</span
+              >
               <span class="stat-label">Corporate Clients</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number"><span class="counter" data-target="10">0</span>K+</span>
+              <span class="stat-number"
+                ><span class="counter" data-target="10">0</span>K+</span
+              >
               <span class="stat-label">Happy Travelers</span>
             </div>
           </div>
@@ -184,9 +293,11 @@
         <div class="network-container smooth-reveal">
           <div class="section-header center-align">
             <h2>Recognition and Network</h2>
-            <p class="center-subtitle">Trusted by leading enterprises and hospitality brands</p>
+            <p class="center-subtitle">
+              Trusted by leading enterprises and hospitality brands
+            </p>
           </div>
-          
+
           <div class="clients-partners-wrapper">
             <div class="network-column">
               <h3 class="network-title">Some of Our Clients</h3>
@@ -222,12 +333,20 @@
       <section class="section-container">
         <div class="founder-grid">
           <div class="founder-img smooth-reveal">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Leadership Note">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80"
+              alt="Leadership Note"
+            />
           </div>
           <div class="founder-content smooth-reveal delay-1">
             <h4 class="section-kicker">A NOTE FROM LEADERSHIP</h4>
             <blockquote class="founder-quote">
-              "When we started Malee Hospitality, our goal wasn't just to book flights and hotels. We wanted to engineer joy. Today, whether we are moving a 500-person corporate delegation across Singapore or curating a private honeymoon in Bali, that core mission remains unchanged: to handle the complex logistics so our clients can focus entirely on creating memories."
+              "When we started Malee Hospitality, our goal wasn't just to book
+              flights and hotels. We wanted to engineer joy. Today, whether we
+              are moving a 500-person corporate delegation across Singapore or
+              curating a private honeymoon in Bali, that core mission remains
+              unchanged: to handle the complex logistics so our clients can
+              focus entirely on creating memories."
             </blockquote>
             <div class="founder-signature">
               <h5>The Executive Board</h5>
@@ -241,30 +360,41 @@
       <section class="section-container bg-muted smooth-section">
         <div class="section-header center-align smooth-reveal">
           <h2>Our Team</h2>
-          <p class="center-subtitle">The professionals dedicated to making your travel seamless</p>
+          <p class="center-subtitle">
+            The professionals dedicated to making your travel seamless
+          </p>
         </div>
         <div class="team-grid">
           <div class="team-card smooth-reveal">
             <div class="team-img">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Isha Sharma">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                alt="Isha Sharma"
+              />
+            </div>
+            <div class="team-info">
+              <h4>Sanjay Juneja</h4>
+              <p>Managing Director</p>
+            </div>
+          </div>
+          <div class="team-card smooth-reveal delay-1">
+            <div class="team-img">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+                alt="Mahesh Nair"
+              />
             </div>
             <div class="team-info">
               <h4>Isha Sharma</h4>
               <p>Director of Operations</p>
             </div>
           </div>
-          <div class="team-card smooth-reveal delay-1">
-            <div class="team-img">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Mahesh Nair">
-            </div>
-            <div class="team-info">
-              <h4>Mahesh Nair</h4>
-              <p>Head of Corporate MICE</p>
-            </div>
-          </div>
           <div class="team-card smooth-reveal delay-2">
             <div class="team-img">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Louis D'Souza">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
+                alt="Louis D'Souza"
+              />
             </div>
             <div class="team-info">
               <h4>Louis D'Souza</h4>
@@ -276,15 +406,19 @@
     </main>
 
     <!-- FOOTER -->
-    <footer id="contact" class="immersive-footer">
-      <div class="footer-hero-cta smooth-reveal">
+     <footer id="contact" class="immersive-footer">
+      <div class="footer-hero-cta">
         <h2>Start Planning Your Next Adventure</h2>
         <p>Reach out directly to coordinate your tour layout.</p>
       </div>
-      <div class="contact-box-grid smooth-reveal">
+
+      <div class="contact-box-grid">
         <div class="contact-pill-item">
           <h5>📍 Office Address</h5>
-          <p>02nd Floor, Next To Chamnan Phenjati Business Centre, Rama IX Rd, Huai Khwang, Bangkok 10310</p>
+          <p>
+            02nd Floor, Next To Chamnan Phenjati Business Centre, Rama IX Rd,
+            Huai Khwang, Bangkok 10310
+          </p>
         </div>
         <div class="contact-pill-item">
           <h5>📞 Call Us</h5>
@@ -292,20 +426,124 @@
         </div>
         <div class="contact-pill-item">
           <h5>📧 Email Us</h5>
-          <p>Ops@maleehospitality.asia</p>
+          <p>Ops@maleehospitality.asia<br />Delops2@maleehospitality.asia</p>
         </div>
         <div class="contact-pill-item">
           <h5>🌐 Website</h5>
           <p>www.maleehospitality.asia</p>
         </div>
       </div>
+
       <div class="footer-divider"></div>
+
+      <div class="footer-links-container">
+        <div class="brand-column">
+          <div class="footer-logo">Malee Hospitality</div>
+          <p>
+            Highly affordable. Professionally managed. Truly unforgettable
+            travel management across Southeast Asia destinations.
+          </p>
+
+          <div class="footer-social-wrapper">
+            <a
+              href="https://www.facebook.com/malee.hospitality.7/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Facebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/maleehospitality_/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Instagram"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://in.linkedin.com/company/malee-hospitality-dmc"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on LinkedIn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://in.pinterest.com/maleehospitalityofficial/"
+              class="social-icon-link"
+              aria-label="Follow Malee Hospitality on Pinterest"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="links-column">
+          <h4>Top Destinations</h4>
+          <a href="#">Thailand</a>
+          <a href="#">Singapore</a>
+          <a href="#">Malaysia</a>
+          <a href="#">Bali (Indonesia)</a>
+          <a href="#">Vietnam</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Company Info</h4>
+          <a href="index.html">About us</a>
+          <a href="#packages">Packages</a>
+          <a href="contact.html">Contact</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Legal & Trust</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms & Conditions</a>
+          <a href="cancellation-refund.html">Cancellation Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div class="links-column">
+          <h4>Premium Standards</h4>
+          <p style="font-size: 13px; color: #a0aec0; line-height: 1.6">
+            ⭐ Premium Hospitality<br />⭐ Visa Documentation Support<br />⭐
+            Localized DMC Expertise
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
       <div class="footer-bottom">
         <div>© 2026 Malee Hospitality</div>
         <div class="legal-links-column">
           <a href="privacy-policy.html">Privacy</a>
           <a href="terms-conditions.html">Terms</a>
+          <a href="cancellation-refund.html">Refunds</a>
         </div>
+        <div>Travel smart. Travel seamlessly. Crafted with absolute care.</div>
       </div>
     </footer>
 
