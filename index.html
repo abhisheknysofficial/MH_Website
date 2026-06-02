@@ -54,19 +54,12 @@
           </div>
 
           <div class="nav-item dropdown">
-            <a
-              href="package.html"
-              class="nav-link dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              PACKAGES <span class="arrow-indicator" aria-hidden="true">▼</span>
-            </a>
-            <div class="dropdown-menu">
+            <a href="package.html" class="nav-link"> PACKAGES </a>
+            <!-- <div class="dropdown-menu">
               <a href="#">Honeymoon Escapes</a>
               <a href="#">Family Adventures</a>
               <a href="#">Corporate Groups</a>
-            </div>
+            </div> -->
           </div>
 
           <div class="nav-item">
@@ -90,137 +83,99 @@
       </div>
     </header>
 
+    <!-- Travel Inquiry Popup Overlay -->
+    <div id="travel-popup-overlay" class="travel-popup-overlay">
+      <div class="travel-popup-card">
+        <!-- Overlapping Circular Close Button -->
+        <button
+          id="close-travel-popup"
+          class="travel-popup-close-btn"
+          aria-label="Close popup"
+        >
+          &times;
+        </button>
+
+        <div class="travel-popup-container">
+          <!-- Left Side: Malaysia Package Image Banner -->
+          <div class="travel-popup-banner">
+            <!-- Using your new verified flyer file -->
+            <img
+              src="./images/1.png"
+              alt="Malee Hospitality Malaysia Tour Package Banner"
+            />
+          </div>
+
+          <!-- Right Side: Content & Lead Form -->
+          <div class="travel-popup-form-side">
+            <header class="travel-popup-header">
+              <h3>Explore Malaysia with Malee Hospitality</h3>
+              <h2>Book Your Dream Escape!</h2>
+              <p>
+                Get exclusive deals on our 3N Kuala Lumpur packages. Drop your
+                details below and our travel experts will design your perfect
+                itinerary.
+              </p>
+            </header>
+
+            <form id="travel-lead-form" class="travel-popup-fields">
+              <!-- Row 1: Full Width First Name -->
+              <div class="form-row full-width">
+                <div class="floating-input-group">
+                  <input
+                    type="text"
+                    id="popup-firstname"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="popup-firstname">FirstName *</label>
+                </div>
+              </div>
+
+              <!-- Row 2: Split Columns for Phone and City -->
+              <div class="form-row split-width">
+                <div class="floating-input-group">
+                  <input type="tel" id="popup-phone" required placeholder=" " />
+                  <label for="popup-phone">Phone Number *</label>
+                </div>
+                <div class="floating-input-group">
+                  <input type="text" id="popup-city" required placeholder=" " />
+                  <label for="popup-city">City*</label>
+                </div>
+              </div>
+
+              <!-- Row 3: Full Width Email -->
+              <div class="form-row full-width">
+                <div class="floating-input-group">
+                  <input
+                    type="email"
+                    id="popup-email"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="popup-email">Email *</label>
+                </div>
+              </div>
+
+              <!-- Submit Action Button -->
+              <button type="submit" class="travel-popup-submit-btn">
+                Submit Enquiry
+              </button>
+            </form>
+
+            <!-- Bottom Analytics Trust Badges -->
+            <footer class="travel-popup-badges">
+              <span>Expert Curation</span>
+              <span class="divider">|</span>
+              <span>Best Price Guaranteed</span>
+              <span class="divider">|</span>
+              <span>24/7 On-Tour Support</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main class="main-wrapper">
-      <!-- <section class="hero-slider-section">
-        <div class="slider-container">
-          <div class="slide active">
-            <img
-              src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1920&q=80"
-              alt="Beautiful temple in Thailand"
-            />
-            <div class="hero-content-wrapper">
-              <div class="hero-tagline">Welcome to Malee Hospitality</div>
-              <h1 class="main-title">
-                Experience Thailand, one voyage at a time.
-              </h1>
-              <p class="subtitle">
-                Discover unforgettable journeys across exotic landscapes, ornate
-                temples, and vibrant city nightlife customized perfectly for
-                you.
-              </p>
-              <p class="hero-subtext">
-                Highly affordable. Professionally managed. Truly unforgettable.
-              </p>
-              <div class="hero-actions">
-                <a href="#packages" class="btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn-outline">Contact Us</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide">
-            <img
-              src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1920&q=80"
-              alt="Futuristic Singapore Skyline"
-            />
-            <div class="hero-content-wrapper">
-              <div class="hero-tagline">Premium Asia Travel Planner</div>
-              <h1 class="main-title">
-                Marvel at Singapore's Modernity & Wonders
-              </h1>
-              <p class="subtitle">
-                From majestic architectures to luxury attractions and
-                family-friendly world-class theme parks.
-              </p>
-              <p class="hero-subtext">
-                Highly affordable. Professionally managed. Truly unforgettable.
-              </p>
-              <div class="hero-actions">
-                <a href="#packages" class="btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn-outline">Contact Us</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide">
-            <img
-              src="https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=1920&q=80"
-              alt="Iconic Twin Towers in Malaysia"
-            />
-            <div class="hero-content-wrapper">
-              <div class="hero-tagline">Tailor-Made Dynamic Escapes</div>
-              <h1 class="main-title">
-                Uncover the Cultural Vibrancy of Malaysia
-              </h1>
-              <p class="subtitle">
-                Traverse through lush rainforests, towering modern skyscrapers,
-                and centuries of diverse history.
-              </p>
-              <p class="hero-subtext">
-                Highly affordable. Professionally managed. Truly unforgettable.
-              </p>
-              <div class="hero-actions">
-                <a href="#packages" class="btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn-outline">Contact Us</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide">
-            <img
-              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80"
-              alt="Tropical Villa Resort in Bali"
-            />
-            <div class="hero-content-wrapper">
-              <div class="hero-tagline">Bespoke Honeymoon & Adventure</div>
-              <h1 class="main-title">
-                Find Inner Peace in Tropical Bali Getaways
-              </h1>
-              <p class="subtitle">
-                Indulge in idyllic beach sanctuaries, spectacular temple steps,
-                and adrenaline-pumping ATV adventures.
-              </p>
-              <p class="hero-subtext">
-                Highly affordable. Professionally managed. Truly unforgettable.
-              </p>
-              <div class="hero-actions">
-                <a href="#packages" class="btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn-outline">Contact Us</a>
-              </div>
-            </div>
-          </div>
-
-          <button
-            class="slider-arrow prev-arrow"
-            id="prevSlide"
-            aria-label="Previous Slide"
-          >
-            ‹
-          </button>
-          <button
-            class="slider-arrow next-arrow"
-            id="nextSlide"
-            aria-label="Next Slide"
-          >
-            ›
-          </button>
-
-          <div class="slider-dots-container" id="dotsContainer"></div>
-        </div>
-
-        <div class="filter-pills-wrapper">
-          <div class="filter-pills-container">
-            <button class="pill active" data-filter="all">
-              All Experiences
-            </button>
-            <button class="pill" data-filter="honeymoon">✨ Honeymoon</button>
-            <button class="pill" data-filter="adventure">🏄 Adventure</button>
-            <button class="pill" data-filter="family">👨‍👩‍👧 Family Tours</button>
-            <button class="pill" data-filter="corporate">💼 Corporate</button>
-          </div>
-        </div>
-      </section> -->
-
       <section class="hero-slider-section">
         <div class="slider-container">
           <div class="slide active">
@@ -333,9 +288,10 @@
           </div>
         </div>
       </section>
+    </main>
 
-      <!-- ---------------------------- -->
-
+    <!-- ---------------------------- -->
+    <main class="main-wrapper">
       <section id="packages" class="section-container">
         <div class="section-header">
           <h2>Explore Asia’s Most Loved Destinations</h2>
@@ -456,6 +412,418 @@
               From visa guidance to airport transfers, our team supports you
               throughout your journey.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="legacy-adventure-section"
+        class="mh-main-section scroll-reveal"
+      >
+        <div class="mh-legacy-header">
+          <h2>Our Legacy of Unforgettable Journeys</h2>
+          <p class="mh-subtitle">
+            Trusted by thousands, crafting memories for a lifetime.
+          </p>
+
+          <div class="mh-stats-grid">
+            <div class="mh-stat-item">
+              <div class="mh-stat-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                >
+                  <path
+                    d="M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm-7 6v-1a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v1"
+                  />
+                </svg>
+              </div>
+              <span class="mh-stat-number" data-target="10000">0</span>
+              <span class="mh-stat-label">Happy Guests</span>
+            </div>
+
+            <div class="mh-stat-item">
+              <div class="mh-stat-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <span class="mh-stat-number" data-target="18">0</span>
+              <span class="mh-stat-label">Years of Experience</span>
+            </div>
+
+            <div class="mh-stat-item">
+              <div class="mh-stat-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                >
+                  <path
+                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                  ></path>
+                </svg>
+              </div>
+              <span class="mh-stat-number" data-target="2000">0</span>
+              <span class="mh-stat-label">Tours Completed</span>
+            </div>
+
+            <div class="mh-stat-item">
+              <div class="mh-stat-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                >
+                  <path
+                    d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="mh-stat-number" data-target="30">0</span>
+              <span class="mh-stat-label">Tour Destinations</span>
+            </div>
+
+            <div class="mh-stat-item">
+              <div class="mh-stat-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="32"
+                  height="32"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+                  ></path>
+                  <line x1="4" y1="22" x2="4" y2="15"></line>
+                </svg>
+              </div>
+              <span class="mh-stat-number" data-target="40">0</span>
+              <span class="mh-stat-label">Tour Leaders</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popup code starts from here  -->
+      <!-- Floating Sticky Sidebar Trigger Button -->
+      <button
+        id="dream-trip-trigger-btn"
+        class="dream-trip-sticky-btn"
+        aria-label="Plan your dream trip"
+      >
+        Plan Your Dream Trip
+      </button>
+
+      <!-- Dream Trip Modal Planner Overlay Container -->
+      <div id="dream-trip-popup-overlay" class="dream-modal-overlay">
+        <div class="dream-modal-card">
+          <!-- Close Square Badge button -->
+          <button
+            id="close-dream-modal"
+            class="dream-modal-close-x"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+
+          <div class="dream-modal-wrapper">
+            <!-- Left Side Canvas Graphic Banner -->
+            <div class="dream-modal-image-side">
+              <!-- Replace with your cropped Taj Mahal banner graphic asset -->
+              <img
+                src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80"
+                alt="Plan Your Dream Trip Destination"
+              />
+            </div>
+
+            <!-- Right Side Form Content Grid -->
+            <div class="dream-modal-form-side">
+              <h2>Plan Your Dream Trip</h2>
+
+              <form id="dream-trip-planner-form" class="dream-form-grid">
+                <!-- Row 1 -->
+                <div class="dream-form-row">
+                  <input type="text" placeholder="Full Name*" required />
+                  <input type="email" placeholder="Email Address*" required />
+                </div>
+
+                <!-- Row 2 -->
+                <div class="dream-form-row">
+                  <input type="text" placeholder="Enter Country *" required />
+                  <!-- Country Dialing Code Field Group Mockup -->
+                  <div class="mock-phone-input-group">
+                    <span class="mock-flag">🇮🇳</span>
+                    <span class="mock-prefix">+91</span>
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      required
+                      style="
+                        border: none;
+                        padding: 0;
+                        margin-left: 8px;
+                        width: 100%;
+                      "
+                    />
+                  </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="dream-form-row">
+                  <input type="text" placeholder="City or State*" />
+                  <input
+                    type="text"
+                    placeholder="Budget per Person (e.g. 12,000)"
+                  />
+                </div>
+
+                <!-- Row 4 -->
+                <div class="dream-form-row">
+                  <input
+                    type="number"
+                    placeholder="No. of Travellers*"
+                    min="1"
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Preferred Travel Month & Year * Example: Jul 2026"
+                    required
+                  />
+                </div>
+
+                <!-- Row 5 -->
+                <div class="dream-form-row">
+                  <input type="text" placeholder="Arrival City*" />
+                  <input type="text" placeholder="Departure City*" />
+                </div>
+
+                <!-- Full Width Requirement Textarea Box -->
+                <div class="dream-form-full">
+                  <textarea
+                    placeholder="Describe your travel requirement*"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Mock Google reCAPTCHA Verification Box Component -->
+                <div class="dream-recaptcha-mock">
+                  <div class="recaptcha-left">
+                    <input
+                      type="checkbox"
+                      id="mock-captcha-checkbox"
+                      required
+                    />
+                    <label for="mock-captcha-checkbox">I'm not a robot</label>
+                  </div>
+                  <div class="recaptcha-right">
+                    <div class="captcha-icon">&#8635;</div>
+                    <span>reCAPTCHA</span>
+                  </div>
+                </div>
+
+                <!-- Deep Navy Submit Button with Inline Arrow -->
+                <button type="submit" class="dream-submit-btn">
+                  <span>Submit</span>
+                  <span class="arrow-symbol">&rarr;</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- popup code ends here -->
+
+      <!-- Google Reviews Testimonials Section -->
+      <section
+        id="google-reviews-section"
+        class="mh-reviews-section scroll-reveal"
+      >
+        <!-- Header Top Row -->
+        <div class="mh-reviews-header">
+          <!-- Left Side: Google Rating Badge -->
+          <div class="mh-rating-badge">
+            <div class="mh-google-logo-text">
+              <span class="g-blue">G</span><span class="g-red">o</span
+              ><span class="g-yellow">o</span><span class="g-blue">g</span
+              ><span class="g-solid-green">l</span><span class="g-red">e</span>
+              <span class="reviews-txt">Reviews</span>
+            </div>
+            <div class="mh-rating-stars-row">
+              <span class="rating-num">4.7</span>
+              <div class="stars-gold">★★★★★</div>
+              <span class="rating-count">(130)</span>
+            </div>
+          </div>
+
+          <!-- Center: Heading Title -->
+          <h2 class="mh-section-title">What Travellers Say About Us?</h2>
+
+          <!-- Right Side: CTA Button & Relocated Arrow Controls -->
+          <div class="mh-header-controls-wrapper">
+            <a href="https://google.com" target="_blank" class="mh-google-btn"
+              >Review us on Google</a
+            >
+
+            <!-- Navigation Arrow Buttons placed cleanly side-by-side -->
+            <div class="mh-arrow-container">
+              <button
+                id="prev-review-btn"
+                class="mh-slider-arrow prev-arrow"
+                aria-label="Previous review"
+              >
+                &#8249;
+              </button>
+              <button
+                id="next-review-btn"
+                class="mh-slider-arrow next-arrow"
+                aria-label="Next review"
+              >
+                &#8250;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Wrapper Control Viewport -->
+        <div class="mh-slider-viewport">
+          <!-- Carousel Track Containment Layer -->
+          <div id="reviews-track" class="mh-reviews-track">
+            <!-- Card 1 -->
+            <div class="mh-review-card">
+              <div class="mh-card-header">
+                <div class="mh-user-avatar avatar-l">
+                  L
+                  <div class="mini-g-badge">G</div>
+                </div>
+                <div class="mh-user-info">
+                  <h4>
+                    Laura Cioni <span class="verified-check">&#10004;</span>
+                  </h4>
+                  <span class="review-date">2 months ago</span>
+                </div>
+              </div>
+              <div class="card-stars">★★★★★</div>
+              <p class="review-text">
+                March 2026. We visited Karnataka—with a few stops in Kerala and
+                Tamil Nadu—on a tour of about 15 days. Cholan Tour provided us
+                with a car and driver, an Italian-...
+              </p>
+              <button class="read-more-btn">Read more</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="mh-review-card">
+              <div class="mh-card-header">
+                <div class="mh-user-avatar avatar-k">
+                  K
+                  <div class="mini-g-badge">G</div>
+                </div>
+                <div class="mh-user-info">
+                  <h4>
+                    Kanchan Kapoor <span class="verified-check">&#10004;</span>
+                  </h4>
+                  <span class="review-date">2 months ago</span>
+                </div>
+              </div>
+              <div class="card-stars">★★★★★</div>
+              <p class="review-text">
+                Excellent service. They customized private tour plan very
+                efficiently. Team member are very cooperative.
+              </p>
+              <button class="read-more-btn">Read more</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="mh-review-card">
+              <div class="mh-card-header">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+                  alt="vinn oly t"
+                  class="mh-user-img-avatar"
+                />
+                <div class="mh-user-info">
+                  <h4>
+                    vinn oly t <span class="verified-check">&#10004;</span>
+                  </h4>
+                  <span class="review-date">2 months ago</span>
+                </div>
+              </div>
+              <div class="card-stars">★★★★★</div>
+              <p class="review-text">
+                Very approachable. Instant reply and we'll organised
+              </p>
+              <button class="read-more-btn">Read more</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="mh-review-card">
+              <div class="mh-card-header">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                  alt="jai kuma"
+                  class="mh-user-img-avatar"
+                />
+                <div class="mh-user-info">
+                  <h4>jai kuma <span class="verified-check">&#10004;</span></h4>
+                  <span class="review-date">3 months ago</span>
+                </div>
+              </div>
+              <div class="card-stars">★★★★★</div>
+              <p class="review-text">
+                The first time with this tours really safe with the driver my
+                next trip will be booked again
+              </p>
+              <button class="read-more-btn">Read more</button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="mh-review-card">
+              <div class="mh-card-header">
+                <div class="mh-user-avatar avatar-s">
+                  S
+                  <div class="mini-g-badge">G</div>
+                </div>
+                <div class="mh-user-info">
+                  <h4>
+                    samuel george <span class="verified-check">&#10004;</span>
+                  </h4>
+                  <span class="review-date">3 months ago</span>
+                </div>
+              </div>
+              <div class="card-stars">★★★★★</div>
+              <p class="review-text">
+                Enjoyed the trip very much this is the 2nd time we are using
+                Cholan tours and my family and I truly enjoyed it. Vinoy
+                arranged everything very well, our trip to Munnar,...
+              </p>
+              <button class="read-more-btn">Read more</button>
+            </div>
           </div>
         </div>
       </section>

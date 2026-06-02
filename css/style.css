@@ -4664,6 +4664,285 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 }
 
+
+
+/* Popup Code Starts from here  */
+/* --- Root Core Variables & Reset --- */
+:root {
+    --popup-brand-orange: #e45d16; /* Extracted custom color from image_8eaa9f.jpg */
+    --popup-dark: #222222;         
+    --popup-gray: #666666;         
+    --popup-border: #cccccc;       
+}
+
+.travel-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(4px); 
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Active Class for Triggering Popup */
+.travel-popup-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Instant Fade-Up Zoom Animation Card */
+.travel-popup-card {
+    background: #ffffff;
+    width: 92%;
+    max-width: 850px;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.travel-popup-overlay.is-visible .travel-popup-card {
+    transform: translateY(0) scale(1);
+}
+
+/* Floating Cross Close Button */
+.travel-popup-close-btn {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    font-size: 24px;
+    font-weight: bold;
+    color: #444444;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.travel-popup-close-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    background-color: #f7f7f7;
+}
+
+/* Grid Layout Split Window */
+.travel-popup-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.travel-popup-banner {
+    flex: 1.1;
+    max-width: 46%;
+    background-color: #fcfcfc;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    overflow: hidden;
+}
+
+.travel-popup-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.travel-popup-form-side {
+    flex: 1.2;
+    padding: 40px 40px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Content Typography styling */
+.travel-popup-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--popup-gray);
+    font-family: Arial, sans-serif;
+}
+
+.travel-popup-header h2 {
+    margin: 6px 0 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--popup-brand-orange);
+    font-family: Arial, sans-serif;
+}
+
+.travel-popup-header p {
+    margin: 0 0 25px 0;
+    font-size: 13.5px;
+    color: #555555;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+
+/* Form Structure Layout Rows */
+.travel-popup-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+}
+
+.form-row.split-width {
+    gap: 15px;
+}
+
+.floating-input-group {
+    position: relative;
+    flex: 1;
+}
+
+/* Floating Label Form Inputs Fields */
+.floating-input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--popup-border);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111111;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-input-group input:focus {
+    border-color: var(--popup-brand-orange);
+    box-shadow: 0 0 0 1px var(--popup-brand-orange);
+}
+
+/* Dynamic Label Movements */
+.floating-input-group label {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    padding: 0 6px;
+    color: #888888;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    transition: transform 0.2s ease, top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.floating-input-group input:focus ~ label,
+.floating-input-group input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 12px;
+    color: var(--popup-brand-orange);
+    font-weight: 600;
+}
+
+/* Brand Theme Submission Button Layout */
+.travel-popup-submit-btn {
+    width: 100%;
+    background-color: var(--popup-brand-orange);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px; 
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(228, 93, 22, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.travel-popup-submit-btn:hover {
+    background-color: #c94f10;
+}
+
+.travel-popup-submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* Footer Badge Bar */
+.travel-popup-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #666666;
+    font-family: Arial, sans-serif;
+}
+
+.travel-popup-badges .divider {
+    color: #dddddd;
+    font-weight: normal;
+}
+
+/* Responsive Adaptive Mobile Screen States */
+@media (max-width: 720px) {
+    .travel-popup-container {
+        flex-direction: column;
+    }
+    .travel-popup-banner {
+        display: none; 
+    }
+    .travel-popup-form-side {
+        padding: 35px 25px 25px 25px;
+    }
+    .form-row.split-width {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .travel-popup-badges {
+        font-size: 10.5px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .travel-popup-badges .divider {
+        display: none;
+    }
+    .travel-popup-badges span {
+        background: #fcf1eb;
+        color: var(--popup-brand-orange);
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+}
+
+
+
+
+
+/* PoPup code Ends here */
+
+
+
+
 /* ==========================================================================
    SMOOTH SCROLL REVEAL ANIMATIONS 
    ========================================================================== */
@@ -4683,3 +4962,1544 @@ document.addEventListener("DOMContentLoaded", () => {
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
+
+
+
+/* --- Brand Configuration Sync --- */
+:root {
+    --mh-orange-theme: #e45d16;  /* Matches your Malaysia Package perfectly */
+    --mh-text-dark: #0f172a;
+    --mh-text-muted: #64748b;
+    --mh-font-family: Arial, sans-serif;
+}
+
+.mh-main-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- Smooth Scroll Reveal Load State --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal.is-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Top Legacy Header & Counters --- */
+.mh-legacy-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.mh-legacy-header h2 {
+    font-family: var(--mh-font-family);
+    color: var(--mh-text-dark);
+    font-size: 28px;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.mh-legacy-header .mh-subtitle {
+    font-family: var(--mh-font-family);
+    color: var(--mh-text-muted);
+    font-size: 14px;
+    margin: 0 0 35px 0;
+}
+
+.mh-stats-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.mh-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+}
+
+.mh-stat-icon {
+    color: var(--mh-orange-theme);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mh-stat-number {
+    font-family: var(--mh-font-family);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--mh-text-dark);
+    margin-bottom: 4px;
+}
+
+.mh-stat-label {
+    font-family: var(--mh-font-family);
+    font-size: 13px;
+    color: var(--mh-text-muted);
+}
+
+/* --- Main Adventure Banner Compound Box --- */
+.mh-adventure-banner {
+    background: linear-gradient(135deg, var(--mh-orange-theme) 0%, #b8430a 100%);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(228, 93, 22, 0.15);
+}
+
+.mh-banner-left {
+    flex: 0.9;
+    color: #ffffff;
+}
+
+.mh-banner-left h3 {
+    font-family: var(--mh-font-family);
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.mh-banner-left p {
+    font-family: var(--mh-font-family);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+}
+
+.mh-banner-right-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* --- Nested Internal Action Cards --- */
+.mh-tour-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mh-tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.mh-card-img {
+    height: 130px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mh-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mh-tour-card:hover .mh-card-img img {
+    transform: scale(1.06);
+}
+
+.mh-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.mh-card-body h4 {
+    font-family: var(--mh-font-family);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mh-text-dark);
+    margin: 0 0 8px 0;
+}
+
+.mh-card-body p {
+    font-family: var(--mh-font-family);
+    font-size: 12.5px;
+    color: var(--mh-text-muted);
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    flex-grow: 1;
+}
+
+.mh-explore-link {
+    font-family: var(--mh-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--mh-orange-theme);
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.mh-explore-link:hover {
+    color: #b8430a;
+    text-decoration: underline;
+}
+
+/* --- Responsive Layout Modifiers --- */
+@media (max-width: 992px) {
+    .mh-adventure-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px;
+    }
+    .mh-banner-left {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mh-banner-right-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mh-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        row-gap: 25px;
+    }
+    .mh-banner-right-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .mh-card-img {
+        height: 160px; /* Thicker presentation profiles on single columns */
+    }
+}
+
+
+
+/* --- Root References --- */
+:root {
+    --mh-google-blue: #4285f4;
+    --mh-brand-orange: #e45d16; /* Inherited brand color */
+    --star-gold: #ffb400;
+    --card-border-radius: 20px;
+}
+
+.mh-reviews-section {
+    max-width: 1240px;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* --- Top Header Structural Bar Grid Layout --- */
+.mh-reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.mh-section-title {
+    font-family: Arial, sans-serif;
+    color: #222222;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+/* Google Micro Branding Element styling */
+.mh-google-logo-text {
+    font-family: 'Product Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.g-blue { color: #4285f4; }
+.g-red { color: #ea4335; }
+.g-yellow { color: #fbbc05; }
+.g-solid-green { color: #34a853; }
+.reviews-txt { color: #5f6368; font-weight: normal; margin-left: 4px; }
+
+.mh-rating-stars-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 4px;
+    font-family: Arial, sans-serif;
+}
+.rating-num { font-weight: bold; font-size: 18px; color: #222; }
+.stars-gold { color: var(--star-gold); font-size: 16px; letter-spacing: 1px; }
+.rating-count { color: #888; font-size: 12px; }
+
+/* Call to Action Button */
+.mh-google-btn {
+    background-color: var(--mh-google-blue);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(66, 133, 244, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
+}
+.mh-google-btn:hover { background-color: #357ae8; }
+
+/* --- Slider Core Window Structure --- */
+.mh-slider-viewport {
+    position: relative;
+    overflow: hidden; /* Clips elements sliding out of box paths */
+    padding: 10px 5px;
+}
+
+.mh-reviews-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* --- Review Item Card --- */
+.mh-review-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--card-border-radius);
+    padding: 24px;
+    min-width: calc(33.333% - 16px); /* Displays 3 cards across desktop devices */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.mh-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Custom Fallback Colorful Initials Circle Profile Badges */
+.mh-user-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+.avatar-l { background-color: #2e7d32; }
+.avatar-k { background-color: #006064; }
+.avatar-s { background-color: #4e342e; }
+
+.mh-user-img-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Little nested overlapping Google Badge flag icons matching reference shot */
+.mini-g-badge, .mh-card-header img + .mini-g-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--mh-google-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mh-user-info h4 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14.5px;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.verified-check {
+    color: #ffffff;
+    background-color: #4285f4;
+    border-radius: 50%;
+    font-size: 8px;
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.review-date { font-size: 12px; color: #777; font-family: Arial, sans-serif; }
+
+.card-stars { color: var(--star-gold); font-size: 15px; margin-bottom: 12px; }
+
+.review-text {
+    font-family: Arial, sans-serif;
+    font-size: 13.5px;
+    color: #444444;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Truncates long cards neatly */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #888888;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+}
+.read-more-btn:hover { color: #333; text-decoration: underline; }
+
+/* --- Navigation Arrow Controls --- */
+.mh-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(34, 34, 34, 0.45);
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+}
+.mh-slider-arrow:hover { background-color: rgba(34, 34, 34, 0.75); }
+.prev-arrow { left: -10px; }
+.next-arrow { right: -10px; }
+
+/* --- Responsive Adaptive Modifiers --- */
+@media (max-width: 992px) {
+    .mh-review-card { min-width: calc(50% - 12px); } /* Show 2 cards across medium displays */
+}
+
+@media (max-width: 768px) {
+    .mh-reviews-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mh-review-card { min-width: 100%; } /* Single full width cards on mobile devices */
+    .mh-slider-arrow { width: 36px; height: 36px; font-size: 20px; }
+    .prev-arrow { left: 5px; }
+    .next-arrow { right: 5px; }
+}
+
+
+/* --- Updated Transparent Navigation Arrow Controls --- */
+.mh-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Sleek semi-transparent dark circle background */
+    background: rgba(0, 0, 0, 0.25); 
+    color: #ffffff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: 300;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px); /* Modern blur effect behind the transparency */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.3s ease;
+}
+
+/* Enhances contrast and gently scales up button when hovered */
+.mh-slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.65);
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Positions buttons perfectly overlapping the track boundary */
+.prev-arrow { 
+    left: -12px; 
+}
+.next-arrow { 
+    right: -12px; 
+}
+
+/* Smart UI: Slightly hide buttons on tiny mobile screens to avoid text crowding */
+@media (max-width: 500px) {
+    .mh-slider-arrow {
+        background: rgba(0, 0, 0, 0.15);
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+    .prev-arrow { left: -4px; }
+    .next-arrow { right: -4px; }
+}
+
+/* --- Updated Fully Transparent Slide Buttons --- */
+.mh-slider-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: none; /* Removed vertical translation to allow full height capture */
+    background: transparent; /* Completely clear background canvas */
+    color: #333333; /* Rich dark gray icon contrast */
+    border: none;
+    width: 60px; /* Wider invisible hitting box for easier desktop clicking */
+    height: auto;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 42px; /* Large, premium thin arrow symbol */
+    font-weight: 100;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                color 0.2s ease, 
+                opacity 0.2s ease;
+    opacity: 0.6; /* Soft visibility by default */
+}
+
+/* Positions left and right buttons flush to the edges of the viewport container */
+.prev-arrow { 
+    left: 0; 
+}
+.next-arrow { 
+    right: 0; 
+}
+
+/* Hover Micro-Interactions */
+.mh-slider-arrow:hover {
+    background: transparent; /* Remains completely clear */
+    color: var(--mh-brand-orange); /* Highlights with your signature brand orange on hover */
+    opacity: 1;
+}
+
+.next-arrow:hover {
+    transform: translateX(4px); /* Micro-move outward on hover */
+}
+
+.prev-arrow:hover {
+    transform: translateX(-4px); /* Micro-move outward on hover */
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 768px) {
+    .mh-slider-arrow {
+        width: 40px;
+        font-size: 32px;
+        opacity: 0.8; /* Higher visibility defaults for touch devices */
+    }
+}
+
+
+/* --- Right Side Header Controls Grouping --- */
+.mh-header-controls-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mh-arrow-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* --- Repositioned Transparent Slider Buttons --- */
+.mh-slider-arrow {
+    position: relative; /* Changed from absolute to flow naturally in header */
+    background: transparent;
+    color: #444444;
+    border: 1px solid #dddddd; /* Thin modern border outline */
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding-bottom: 3px; /* Optically centers the arrow icon symbol vertically */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Subtle Hover States using your Brand Theme */
+.mh-slider-arrow:hover {
+    border-color: var(--mh-brand-orange);
+    color: var(--mh-brand-orange);
+    background-color: #fffaf7; /* Minimal brand tint */
+}
+
+/* Override side positioning rules since buttons live in the header row now */
+.prev-arrow, .next-arrow {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    opacity: 1;
+}
+
+/* Mobile Layout Responsive Fixes */
+@media (max-width: 768px) {
+    .mh-reviews-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .mh-header-controls-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .mh-arrow-container {
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+/* --- Right Side Header Controls Grouping --- */
+.mh-header-controls-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mh-arrow-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* --- Repositioned Transparent Slider Buttons --- */
+.mh-slider-arrow {
+    position: relative; /* Changed from absolute to flow naturally in header */
+    background: transparent;
+    color: #444444;
+    border: 1px solid #dddddd; /* Thin modern border outline */
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding-bottom: 3px; /* Optically centers the arrow icon symbol vertically */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Subtle Hover States using your Brand Theme */
+.mh-slider-arrow:hover {
+    border-color: var(--mh-brand-orange);
+    color: var(--mh-brand-orange);
+    background-color: #fffaf7; /* Minimal brand tint */
+}
+
+/* Override side positioning rules since buttons live in the header row now */
+.prev-arrow, .next-arrow {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    opacity: 1;
+}
+
+/* Mobile Layout Responsive Fixes */
+@media (max-width: 768px) {
+    .mh-reviews-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .mh-header-controls-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .mh-arrow-container {
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+
+/* --- Floating Sticky Button Styling --- */
+.dream-trip-sticky-btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right bottom;
+    background: #e45d16; /* Your signature deep orange brand color matches edited-image_2.png */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+}
+
+.dream-trip-sticky-btn:hover {
+    background-color: #c94f10;
+    padding-bottom: 16px; /* Pops out slightly on hover */
+}
+
+/* --- Modal Base Layer Layout --- */
+.dream-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.6); /* Deep navy glass tint */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100005;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Modal Active Pop State */
+.dream-modal-overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dream-modal-card {
+    background: #ffffff;
+    width: 94%;
+    max-width: 900px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    overflow: visible;
+    transform: translateY(30px) scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dream-modal-overlay.is-active .dream-modal-card {
+    transform: translateY(0) scale(1);
+}
+
+/* Overlapping Close Button layout box */
+.dream-modal-close-x {
+    position: absolute;
+    top: 10px;
+    right: -42px; /* Pulls button cleanly outside card boundary layer */
+    background: #ffffff;
+    border: none;
+    font-size: 24px;
+    color: #333333;
+    font-weight: 300;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.dream-modal-close-x:hover {
+    transform: scale(1.08);
+}
+
+/* --- Content Split Wrapper --- */
+.dream-modal-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.dream-modal-image-side {
+    flex: 1;
+    max-width: 40%;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-color: #f8fafc;
+}
+
+.dream-modal-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dream-modal-form-side {
+    flex: 1.5;
+    padding: 35px 40px;
+    box-sizing: border-box;
+}
+
+.dream-modal-form-side h2 {
+    margin: 0 0 24px 0;
+    font-family: Arial, sans-serif;
+    color: #222222;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* --- Inner Form Structural Inputs --- */
+.dream-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.dream-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.dream-form-grid input,
+.dream-form-grid textarea,
+.mock-phone-input-group {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    color: #333333;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease;
+}
+
+.dream-form-grid input:focus,
+.dream-form-grid textarea:focus,
+.mock-phone-input-group:focus-within {
+    border-color: #0b1a4a; /* Focus outline matches the dark navy button */
+}
+
+/* Phone Field custom layout styles */
+.mock-phone-input-group {
+    display: flex;
+    align-items: center;
+}
+.mock-flag { font-size: 16px; margin-right: 4px; }
+.mock-prefix { color: #555; font-size: 13.5px; margin-right: 4px; }
+
+.dream-form-grid textarea {
+    resize: none;
+}
+
+/* --- reCAPTCHA Mock Component --- */
+.dream-recaptcha-mock {
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    width: 270px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+.recaptcha-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.recaptcha-left input {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+.recaptcha-left label {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #222;
+    cursor: pointer;
+    user-select: none;
+}
+
+.recaptcha-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #555555;
+}
+.captcha-icon { font-size: 18px; color: #4285f4; font-weight: bold; line-height: 1; }
+.recaptcha-right span { font-size: 8px; font-family: sans-serif; margin-top: 4px; }
+
+/* --- Deep Navy Submit Button --- */
+.dream-submit-btn {
+    width: 100%;
+    background-color: #0b1a4a; /* Deep navy tone from reference image */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-radius: 25px; /* Pill design style */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(11, 26, 74, 0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.dream-submit-btn:hover {
+    background-color: #142866;
+}
+
+.dream-submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* --- Mobile Responsive Rules --- */
+@media (max-width: 768px) {
+    .dream-modal-image-side {
+        display: none; /* Safely drops left layout to prioritize form on mobile screen spaces */
+    }
+    .dream-modal-form-side {
+        padding: 30px 24px;
+    }
+    .dream-form-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .dream-modal-close-x {
+        right: 12px;
+        top: -42px; /* Positions button cleanly on top of modal for mobile screens */
+    }
+}
+
+
+/* ==========================================================================
+   HOMEPAGE FULLSCREEN HERO SLIDER & KEN BURNS EFFECT
+   ========================================================================== */
+.hero-slider-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Complete fullscreen height */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Slide Image Wrapper & Zoom Engine */
+.slide-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 7s ease-out; /* Smooth ongoing zoom duration */
+}
+
+/* Dark cinematic overlay for typography contrast */
+.slide-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.4) 0%, 
+        rgba(0, 0, 0, 0.2) 50%, 
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* Active slide scales up dynamically */
+.slide.active .slide-image-wrapper img {
+    transform: scale(1.12);
+}
+
+/* Typography Container Design */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 850px;
+    padding: 0 24px;
+    color: #FFFFFF;
+}
+
+/* Content Fade/Slide up staggered entry animations */
+.hero-content-wrapper > * {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide.active .hero-content-wrapper > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide.active .hero-tagline { transition-delay: 0.3s; }
+.slide.active .main-title   { transition-delay: 0.5s; }
+.slide.active .subtitle     { transition-delay: 0.7s; }
+.slide.active .hero-actions { transition-delay: 0.9s; }
+
+.hero-tagline {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.main-title {
+    font-size: clamp(32px, 6vw, 64px); /* Fluid typography scales elegantly across mobile/desktop */
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: rgba(255, 255, 255, 0.85);
+    margin: 20px auto 32px;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Minimalist Button Styling matching user frames */
+.btn-minimal {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.btn-minimal:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* Navigation UI Layout overrides */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.slider-arrow:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.prev-arrow { left: 25px; }
+.next-arrow { right: 25px; }
+
+.slider-dots-container {
+    position: absolute;
+    bottom: 120px; /* Positioned safely above filter pills */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 15;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.dot.active {
+    background: #FFFFFF;
+    transform: scale(1.2);
+}
+
+/* Bottom Floating Filter Wrapper */
+.filter-pills-wrapper {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.filter-pills-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px;
+    border-radius: 40px;
+    max-width: max-content;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.filter-pills-container .pill {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-pills-container .pill.active, 
+.filter-pills-container .pill:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+
+
+/* ==========================================================================
+   HOMEPAGE HERO LAYOUT & KEN BURNS SLIDER EFFECT
+   ========================================================================== */
+.hero-slider-section {
+    position: relative;
+    
+    /* CRITICAL FIX: Breaks cleanly out of '.main-wrapper' constraints */
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Full Screen Viewport Height Configuration */
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Image Wrapper & Ken Burns Zoom Engine */
+.slide-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 8s ease-out; /* Premium, slow, cinematic zoom speed */
+}
+
+/* Vignette overlay shading for clean text readability */
+.slide-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+    z-index: 2;
+}
+
+/* Active Zoom State */
+.slide.active .slide-image-wrapper img {
+    transform: scale(1.15);
+}
+
+/* Typography Container Design */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 850px;
+    padding: 0 24px;
+    color: #FFFFFF;
+}
+
+/* Staggered Content Entry Animations */
+.hero-content-wrapper > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide.active .hero-content-wrapper > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide.active .hero-tagline { transition-delay: 0.3s; }
+.slide.active .main-title   { transition-delay: 0.5s; }
+.slide.active .subtitle     { transition-delay: 0.7s; }
+.slide.active .hero-actions { transition-delay: 0.9s; }
+
+.hero-tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-gold, #D69E2E);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.main-title {
+    font-size: clamp(34px, 6vw, 64px); /* Scales cleanly across phones and desktops */
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: clamp(14px, 2vw, 16px);
+    color: rgba(255, 255, 255, 0.85);
+    margin: 16px auto 32px;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.btn-minimal {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.btn-minimal:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* Interactive Navigation Elements */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.slider-arrow:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.prev-arrow { left: 24px; }
+.next-arrow { right: 24px; }
+
+.slider-dots-container {
+    position: absolute;
+    bottom: 115px; /* Sits nicely above the floating category pills block */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 15;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.dot.active {
+    background: #FFFFFF;
+    transform: scale(1.2);
+}
+
+/* Bottom Glassmorphic Category Pills Wrapper */
+.filter-pills-wrapper {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.filter-pills-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: rgba(15, 23, 42, 0.45); /* Sleek frosted layout matching the live references */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 8px;
+    border-radius: 40px;
+    max-width: max-content;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.filter-pills-container .pill {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-pills-container .pill.active,
+.filter-pills-container .pill:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+
+
+/* --- Loading & Scroll Reveal Animation Layout States --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.9s cubic-bezier(0.215, 0.610, 0.355, 1);
+    will-change: opacity, transform;
+}
+
+/* This class activates automatically via JS once scrolled or reloaded */
+.scroll-reveal.mh-reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Arrow for slide display none code  */
+
+.prev-arrow,.next-arrow {
+  display: none;
+}
+
+
+
