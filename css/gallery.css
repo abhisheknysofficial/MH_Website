@@ -1,0 +1,146 @@
+/* ==========================================================================
+   PHOTO & GALLERY PAGE SHEET (css/gallery.css)
+   ========================================================================== */
+.gallery-page-wrapper {
+  background-color: var(--bg-primary);
+  padding-bottom: 60px;
+}
+
+.gallery-hero-banner {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=1600&q=80");
+  padding: 130px 20px;
+  margin-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.gallery-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 250px;
+  background-color: var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.item-overlay span {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+.gallery-item:hover .item-overlay {
+  opacity: 1;
+}
+.gallery-item:hover .item-overlay span {
+  transform: translateY(0);
+}
+
+/* --- Lightbox Modal Engine Overlay Layers --- */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 26, 48, 0.95);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+}
+
+.gallery-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-content-frame {
+  max-width: 85vw;
+  max-height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-content-frame img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.lightbox-caption {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .gallery-masonry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .gallery-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .gallery-item {
+    height: 180px;
+  }
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+  }
+}

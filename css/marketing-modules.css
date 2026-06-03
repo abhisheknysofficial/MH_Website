@@ -1,0 +1,172 @@
+/* ==========================================================================
+   MARKETING LANDING MODULES (css/marketing-modules.css)
+   ========================================================================== */
+:root {
+  --mh-brand-orange: #e45d16;
+  --star-gold: #ffb400;
+}
+
+.mh-main-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* --- Main Adventure Banner Compound Box --- */
+.mh-adventure-banner {
+  background: linear-gradient(135deg, var(--mh-brand-orange) 0%, #b8430a 100%);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 10px 30px rgba(228, 93, 22, 0.15);
+}
+
+.mh-banner-left {
+  flex: 0.9;
+  color: #ffffff;
+}
+.mh-banner-left h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+.mh-banner-left p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+  font-family: Arial, sans-serif;
+}
+.mh-banner-right-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mh-tour-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mh-tour-card:hover {
+  transform: translateY(-6px);
+}
+.mh-card-img {
+  height: 130px;
+  width: 100%;
+  overflow: hidden;
+}
+.mh-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mh-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.mh-card-body h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Right Side Header Controls Grouping --- */
+.mh-reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.mh-header-controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mh-arrow-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mh-slider-viewport {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 5px;
+}
+.mh-reviews-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.mh-review-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 24px;
+  min-width: calc(33.333% - 16px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Repositioned Transparent Header Slider Buttons */
+.mh-slider-arrow {
+  position: relative;
+  background: transparent;
+  color: #444444;
+  border: 1px solid #dddddd;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  transition: all 0.2s ease;
+}
+
+.mh-slider-arrow:hover {
+  border-color: var(--mh-brand-orange);
+  color: var(--mh-brand-orange);
+  background-color: #fffaf7;
+}
+
+@media (max-width: 992px) {
+  .mh-adventure-banner {
+    flex-direction: column;
+  }
+  .mh-banner-right-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mh-review-card {
+    min-width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .mh-banner-right-grid,
+  .mh-review-card {
+    grid-template-columns: 1fr;
+    min-width: 100%;
+  }
+  .mh-reviews-header,
+  .mh-header-controls-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+}

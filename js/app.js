@@ -1688,3 +1688,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionElement = document.getElementById("legacy-adventure-section");
   if (sectionElement) revealObserver.observe(sectionElement);
 });
+
+
+const targetedDataId = trigger.getAttribute("data-target");
+const activePanelElement = document.getElementById(targetedDataId);
+

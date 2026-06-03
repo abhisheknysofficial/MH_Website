@@ -3993,7 +3993,7 @@ body {
 .footer-bottom {
   max-width: 1440px;
   margin: 0 auto;
-  display: flex;a
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
@@ -6501,5 +6501,24 @@ document.addEventListener("DOMContentLoaded", () => {
   display: none;
 }
 
+
+.hero-slider-section {q
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw; /* <--- This creates horizontal overflow */
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Safely clips off any micro-overflow gaps */
+}
 
 
