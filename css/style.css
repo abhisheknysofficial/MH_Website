@@ -294,14 +294,9 @@ body {
     margin-bottom: 14px;
 }
 
-.why-card h3, .package-card h3 {
-    font-size: 16px;
-    color: var(--text-heading);
-    margin-bottom: 6px;
-}
 
 .why-card p, .itinerary-snippet {
-    font-size: 13.5px;
+    font-size: 16px;
     color: var(--text-muted);
     line-height: 1.5;
 }
@@ -4904,7 +4899,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .mh-legacy-header .mh-subtitle {
     font-family: var(--mh-font-family);
     color: var(--mh-text-muted);
-    font-size: 14px;
+    font-size: 16px;
     margin: 0 0 35px 0;
 }
 
@@ -4941,7 +4936,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 .mh-stat-label {
     font-family: var(--mh-font-family);
-    font-size: 13px;
+    font-size: 15px;
     color: var(--mh-text-muted);
 }
 
@@ -7097,13 +7092,13 @@ body {
 .about-content h2,
 .center-title,
 .section-header h2 {
-  font-size: 26px;
+  font-size: 28px;
   color: var(--text-heading);
   margin-bottom: 14px;
 }
 
 .about-content p {
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--text-muted);
   margin-bottom: 12px;
@@ -7141,13 +7136,13 @@ body {
 }
 .why-card h3,
 .package-card h3 {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-heading);
   margin-bottom: 6px;
 }
 .why-card p,
 .itinerary-snippet {
-  font-size: 13.5px;
+  font-size: 16.5px;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -7192,7 +7187,7 @@ body {
   flex-grow: 1;
 }
 .badge-category {
-  font-size: 12px;
+  font-size: 14.5px;
   color: var(--text-light);
   font-weight: 600;
   text-transform: uppercase;
@@ -7204,7 +7199,7 @@ body {
   font-weight: 700;
   padding: 4px 8px;
   border-radius: 4px;
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .green-badge {
@@ -7561,7 +7556,7 @@ body {
   background: #ffffff;
   padding: 0 6px;
   color: #888888;
-  font-size: 14px;
+  font-size: 18px !important;
   font-family: Arial, sans-serif;
   pointer-events: none;
   transition:

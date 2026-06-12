@@ -980,3 +980,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 
 
+document.querySelectorAll('.filter-pills-container .pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const packagesSection = document.getElementById('packages');
+    if (packagesSection) {
+      packagesSection.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  });
+});
