@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Media Gallery | Malee Hospitality</title>
+    <title>About Us | Malee Hospitality</title>
+    <meta
+      name="description"
+      content="Learn more about Malee Hospitality, your trusted travel partner in Asia."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,9 +15,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/about.css" />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="main-header">
       <div class="header-container">
         <div class="brand-identity">
@@ -77,232 +82,155 @@
         </nav>
       </div>
     </header>
-    <main class="main-wrapper">
-      <section
-        class="about-hero-banner smooth-reveal visible is-visible is-loaded"
-      >
-        <div class="banner-content">
-          <h1 class="banner-heading">Travel Stories</h1>
-          <p class="banner-subheading">
-            A visual glimpse into curated experiences across top Asian
-            destinations.
-          </p>
-        </div>
-      </section>
 
-      <div class="gallery-page-wrapper">
-        <!-- <section class="gallery-hero-banner">
-          <div class="banner-content">
-            <h1 class="banner-heading">Travel Stories</h1>
-            <p class="banner-subheading">
-              A visual glimpse into curated experiences across top Asian
-              destinations.
-            </p>
-          </div>
-        </section> -->
-
-        <section class="main-wrapper">
-          <div class="gallery-filter-container">
-            <button class="gallery-filter-btn active" data-tag="all">
-              All Photos
-            </button>
-            <button class="gallery-filter-btn" data-tag="thailand">
-              Thailand
-            </button>
-            <button class="gallery-filter-btn" data-tag="singapore">
-              Singapore
-            </button>
-            <button class="gallery-filter-btn" data-tag="malaysia">
-              Malaysia
-            </button>
-            <button class="gallery-filter-btn" data-tag="other">Other</button>
-          </div>
-
-          <div
-            id="galleryGrid"
-            class="gallery-masonry-grid"
-            style="margin-top: 30px"
-          >
-            <div class="gallery-item" data-location="thailand">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Wat-Pho-1.webp"
-                alt="Wat Pho Temple Thailand"
-              />
-              <div class="item-overlay">
-                <span>Wat Pho Temple Tour 🌟</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="thailand">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Grand-Palace-Visit.webp"
-                alt="Grand Palace Bangkok Thailand"
-              />
-              <div class="item-overlay">
-                <span>The Grand Palace Experience 🏰</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="thailand">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Bangkok-Temple-Visit-2.webp"
-                alt="Bangkok Temple Visit"
-              />
-              <div class="item-overlay">
-                <span>Cultural Temple Journey 🙏</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="thailand">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/bangkok.webp"
-                alt="Bangkok City Landscape"
-              />
-              <div class="item-overlay">
-                <span>Vibrant Bangkok Cityscape 🏙️</span>
-              </div>
-            </div>
-
-            <div class="gallery-item" data-location="singapore">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Night-Safari.webp"
-                alt="Singapore Night Safari"
-              />
-              <div class="item-overlay">
-                <span>Singapore Night Safari Adventure 🌙</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="singapore">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Singapore-Tour.webp"
-                alt="Singapore City Highlights Tour"
-              />
-              <div class="item-overlay">
-                <span>Discover Singapore Highlights 🦁</span>
-              </div>
-            </div>
-
-            <div class="gallery-item" data-location="malaysia">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Batu-Caves.webp"
-                alt="Batu Caves Malaysia"
-              />
-              <div class="item-overlay">
-                <span>Majestic Batu Caves 🪔</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="malaysia">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/KL-Twin-towers-Tour.webp"
-                alt="Kuala Lumpur Twin Towers Tour"
-              />
-              <div class="item-overlay">
-                <span>Petronas Twin Towers Tour 🏢</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="malaysia">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/KL-City-Tour.webp"
-                alt="KL City Tour"
-              />
-              <div class="item-overlay">
-                <span>Kuala Lumpur City Excursion 🚗</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="malaysia">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Malaysia-Tour.webp"
-                alt="Malaysia Travel Experience"
-              />
-              <div class="item-overlay">
-                <span>Wonderful Malaysia Journey ✨</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="malaysia">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/12/Kuala-Lumpur-Malaysia.png"
-                alt="Kuala Lumpur Skyline"
-              />
-              <div class="item-overlay">
-                <span>Kuala Lumpur Horizons 🌅</span>
-              </div>
-            </div>
-
-            <div class="gallery-item" data-location="other">
-              <img
-                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80"
-                alt="Exotic Tropical Resort Gateway"
-              />
-              <div class="item-overlay">
-                <span>Hidden Island Getaways 🏝️</span>
-              </div>
-            </div>
-            <div class="gallery-item" data-location="other">
-              <img
-                src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80"
-                alt="Beautiful South East Asia Temple Landscape"
-              />
-              <div class="item-overlay">
-                <span>Regional Heritage Tours ⛩️</span>
-              </div>
-            </div>
-
-            <div class="gallery-item hidden-batch" data-location="thailand">
-              <img
-                src="https://maleehospitality.asia/wp-content/uploads/2025/11/Grand-Palace-Visit.webp"
-                alt="Grand Palace Visit Bangkok"
-              />
-              <div class="item-overlay">
-                <span>Grand Palace Exploration 🏰</span>
-              </div>
+    <section class="destinations-section">
+      <div class="destinations-container">
+        <div class="destinations-grid" id="destinationsGrid">
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=400"
+              alt="Gardens By The Bay, Singapore"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Singapore</h3>
             </div>
           </div>
 
-          <div class="gallery-action-wrapper">
-            <button id="btnLoadMore" class="btn-load-gallery">
-              Load More Experiences
-            </button>
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=400"
+              alt="Phi Phi Islands, Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Phi Phi Islands, Thailand</h3>
+            </div>
           </div>
-        </section>
-      </div>
 
-      <div
-        id="galleryLightbox"
-        class="gallery-lightbox"
-        aria-hidden="true"
-        role="dialog"
-      >
-        <button
-          id="lightboxClose"
-          class="lightbox-close"
-          aria-label="Close Lightbox Modal"
-        >
-          &times;
-        </button>
-        <button
-          id="lightboxPrev"
-          class="lightbox-arrow arrow-left"
-          aria-label="Previous Image"
-        >
-          &#10094;
-        </button>
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Kuala%20Lumpur.png"
+              alt="Petronas Twin Towers, Malaysia"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Kuala Lumpur, Malaysia</h3>
+            </div>
+          </div>
 
-        <div class="lightbox-content-frame">
-          <img
-            id="lightboxActiveImg"
-            src=""
-            alt="Active Lightbox Target Image"
-          />
-          <div id="lightboxCaption" class="lightbox-caption"></div>
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Hua%20Hin%20Thailand.png?updatedAt=1780999100889"
+              alt=" Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Hua hin, Thailand</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Genting%20Highlland.png"
+              alt="Malaysia"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Genting Highland, Malaysia</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Sentosa%20Island.png"
+              alt="Sentosa Island, Singapore"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Sentosa Island, Singapore</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Phuket.png?updatedAt=1781088916708"
+              alt="Phuket, Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Phuket, Thailand</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Langkawi%20Website%20images%20%20-%201920X1080.png?updatedAt=1780999098387"
+              alt="Langkawi, Malaysia"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Langkawi, Malaysia</h3>
+            </div>
+          </div>
+
+          <div class="destination-card hidden-card">
+            <img
+              src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=400"
+              alt="Krabi, Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Krabi, Thailand</h3>
+            </div>
+          </div>
+
+          <div class="destination-card hidden-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Untitled%20-%20June%2005,%202026%20at%2011.24.53-1%20(7).png"
+              alt="Mount Kinabalu, Malaysia"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Mount Kinabalu, Malaysia</h3>
+            </div>
+          </div>
+
+          <div class="destination-card hidden-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Bangkok.png"
+              alt="Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Bangkok, Thailand</h3>
+            </div>
+          </div>
+
+          <div class="destination-card hidden-card">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Chiang%20Mai.png?updatedAt=1781075698072"
+              alt="Chiang Mai, Thailand"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Chiang Mai, Thailand</h3>
+            </div>
+          </div>
         </div>
 
-        <button
-          id="lightboxNext"
-          class="lightbox-arrow arrow-right"
-          aria-label="Next Image"
-        >
-          &#10095;
-        </button>
+        <div class="view-more-container">
+          <button id="viewMoreBtn" class="view-more-btn">
+            <span>View more</span>
+            <svg
+              id="viewMoreIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="transition: transform 0.3s ease"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
-    </main>
+    </section>
 
+    <!-- FOOTER -->
     <footer id="contact" class="immersive-footer">
       <div class="footer-hero-cta">
         <h2>Start Planning Your Next Adventure</h2>

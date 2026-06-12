@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malee Hospitality - Mobile Menu</title>
+  <style>
+    /* --- CSS STYLES --- */
+    
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      /* Prevents horizontal scroll on mobile */
+      overflow-x: hidden; 
+    }
+
+    /* Fixed Header */
+    .mobile-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    /* Logo Text (Replace with your actual image tag if preferred) */
+    .logo-text {
+      font-size: 1.1rem;
+      color: #333;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .logo-text strong {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    /* Hamburger Button */
+    .menu-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 1001; /* Keep button above the menu overlay */
+      padding: 5px;
+    }
+
+    .menu-toggle .bar {
+      width: 26px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Hamburger to 'X' Animation */
+    .menu-toggle.is-active .bar:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Slide-out Navigation Drawer */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%; /* Start hidden off-screen */
+      width: 75%; /* Takes up 75% of screen */
+      max-width: 320px;
+      height: 100vh;
+      background-color: #ffffff;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .mobile-nav.is-open {
+      right: 0; /* Slides in */
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Initial state for stagger animation */
+    .nav-links li {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.4s ease;
+    }
+
+    /* Staggered fade-in when menu opens */
+    .mobile-nav.is-open .nav-links li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Delay each link slightly for a cascading effect */
+    .mobile-nav.is-open .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-nav.is-open .nav-links li:nth-child(2) { transition-delay: 0.15s; }
+    .mobile-nav.is-open .nav-links li:nth-child(3) { transition-delay: 0.2s; }
+    .mobile-nav.is-open .nav-links li:nth-child(4) { transition-delay: 0.25s; }
+    .mobile-nav.is-open .nav-links li:nth-child(5) { transition-delay: 0.3s; }
+    .mobile-nav.is-open .nav-links li:nth-child(6) { transition-delay: 0.35s; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f06a35; /* Primary brand orange */
+    }
+
+    /* Special Contact Button */
+    .contact-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: 2px solid #333;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .contact-btn:hover {
+      background-color: #333;
+      color: #fff !important;
+    }
+
+    /* Dark overlay behind the menu */
+    .body-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .body-backdrop.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Placeholder content to demonstrate scrolling */
+    main {
+      padding: 100px 20px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="mobile-header">
+    <div class="logo">
+      <span class="logo-text"><strong>MH</strong> MALEE</span>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Open Navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav">
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Packages</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#" class="contact-btn">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="body-backdrop"></div>
+
+  <main>
+    <h1>Bangkok Exclusive Getaways</h1>
+    <p style="margin-top: 15px; color: #555; line-height: 1.6;">
+      Discover world-class hotels, vibrant culture, exquisite dining, and unforgettable experiences in Thailand's dynamic capital. Tap the menu icon in the top right to see the mobile navigation in action.
+    </p>
+  </main>
+
+  <script>
+    /* --- JAVASCRIPT --- */
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const backdrop = document.querySelector('.body-backdrop');
+      const body = document.body;
+
+      // Function to open/close menu
+      function toggleMenu() {
+        menuToggle.classList.toggle('is-active');
+        mobileNav.classList.toggle('is-open');
+        backdrop.classList.toggle('is-visible');
+        
+        // Disable background scrolling when the menu is open
+        if (mobileNav.classList.contains('is-open')) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = '';
+        }
+      }
+
+      // Click event for the hamburger icon
+      menuToggle.addEventListener('click', toggleMenu);
+      
+      // Click event for the dark backdrop (closes menu if user taps outside)
+      backdrop.addEventListener('click', toggleMenu);
+
+      // Close menu automatically when any link is clicked
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileNav.classList.contains('is-open')) {
+            toggleMenu();
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

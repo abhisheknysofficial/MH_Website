@@ -3,60 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Malee Hospitality | Thailand, Bali & Singapore Tour Packages</title>
+    <title>Malee Hospitality</title>
     <meta
       name="description"
-      content="Explore affordable international holiday packages with Malee Hospitality. Discover Thailand, Bali, Singapore & more with customized tours, group trips, honeymoon packages, and seamless travel experiences."
+      content="Explore affordable international holiday packages with Malee Hospitality. Discover Thailand, Singapore, Malaysia & more with customized tours, group trips, honeymoon packages, and seamless travel experiences."
     />
+    <link rel="preload" href="https://ik.imagekit.io/abiiiio/Thailand%20Website%20images%20%20-%201920X1080%20px.png" as="image" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/popup.css" />
     <link rel="stylesheet" href="css/marketing-modules.css" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header class="main-header">
-      <div class="header-container">
-        <div class="brand-identity">
-          <a href="index.html" class="logo-link">
-            <img
-              src="https://maleehospitality.asia/wp-content/uploads/2023/06/Logo-Black-1.png"
-              alt="Malee Hospitality Corporate Logo"
-              class="brand-logo-img"
-            />
-          </a>
-        </div>
+<header class="main-header">
+  <div class="header-container">
+    
+    <div class="brand-identity">
+      <a href="https://maleehospitality.com/" class="logo-link">
+        <img 
+          src="https://maleehospitality.asia/wp-content/uploads/2023/06/Logo-Black-1.png" 
+          alt="Malee Hospitality Corporate Logo" 
+          class="brand-logo-img" 
+        />
+      </a>
+    </div>
 
-        <nav class="navigation-menu" aria-label="Main Navigation">
+    <!-- <nav class="navigation-menu" aria-label="Main Navigation">
+      <div class="nav-item">
+        <a href="https://maleehospitality.com/" class="nav-link active">HOME</a>
+      </div>
+      <div class="nav-item dropdown">
+        <a href="destination.html" class="nav-link">DESTINATIONS</a>
+      </div>
+      <div class="nav-item dropdown">
+        <a href="package.html" class="nav-link">PACKAGES</a>
+        </div>
+      <div class="nav-item">
+        <a href="gallery.html" class="nav-link">GALLERY</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">ABOUT US</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link contact-button">CONTACT</a>
+      </div>
+
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="toggle-icon">🌙</span>
+      </button>
+    </nav> -->
+
+    <nav class="navigation-menu" aria-label="Main Navigation">
           <div class="nav-item">
-            <a href="index.html" class="nav-link active">HOME</a>
+            <a href="index.html" class="nav-link active">Home</a>
           </div>
 
-          <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              DESTINATIONS
+          <div class="nav-item dropdown open">
+            <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="true">
+              Destinations
               <span class="arrow-indicator" aria-hidden="true">▼</span>
             </a>
             <div class="dropdown-menu">
-              <a href="#">Thailand</a>
-              <a href="#">Singapore</a>
-              <a href="#">Malaysia</a>
+              <a href="thailand.html">Thailand</a>
+              <a href="singapore.html">Singapore</a>
+              <a href="malaysia.html">Malaysia</a>
+              <a href="destination.html">More</a>
             </div>
           </div>
 
           <div class="nav-item dropdown">
-            <a href="package.html" class="nav-link"> PACKAGES </a>
+            <a href="package.html" class="nav-link"> Packages </a>
             <!-- <div class="dropdown-menu">
               <a href="#">Honeymoon Escapes</a>
               <a href="#">Family Adventures</a>
@@ -65,117 +87,49 @@
           </div>
 
           <div class="nav-item">
-            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
           </div>
           <div class="nav-item">
-            <a href="about.html" class="nav-link">ABOUT US</a>
+            <a href="about.html" class="nav-link">About Us</a>
           </div>
           <div class="nav-item">
-            <a href="contact.html" class="nav-link contact-button">CONTACT</a>
+            <a href="contact.html" class="nav-link contact-button">Contact</a>
           </div>
 
-          <button
-            id="themeToggle"
-            class="theme-toggle"
-            aria-label="Toggle Dark Mode"
-          >
-            <span class="toggle-icon">🌙</span>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="toggle-icon">☀️</span>
           </button>
         </nav>
-      </div>
-    </header>
+    <button class="menu-toggle" aria-label="Open Navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-    <!-- Travel Inquiry Popup Overlay -->
-    <div id="travel-popup-overlay" class="travel-popup-overlay">
-      <div class="travel-popup-card">
-        <!-- Overlapping Circular Close Button -->
-        <button
-          id="close-travel-popup"
-          class="travel-popup-close-btn"
-          aria-label="Close popup"
-        >
-          &times;
-        </button>
+  </div>
+</header>
 
-        <div class="travel-popup-container">
-          <!-- Left Side: Malaysia Package Image Banner -->
-          <div class="travel-popup-banner">
-            <!-- Using your new verified flyer file -->
-            <img
-              src="./images/1.png"
-              alt="Malee Hospitality Malaysia Tour Package Banner"
-            />
-          </div>
+<nav class="mobile-nav">
+  <ul class="nav-links">
+    <li><a href="https://maleehospitality.com/" class="active">Home</a></li>
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="package.html">Packages</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="contact-btn">Contact</a></li>
+  </ul>
+</nav>
 
-          <!-- Right Side: Content & Lead Form -->
-          <div class="travel-popup-form-side">
-            <header class="travel-popup-header">
-              <h3>Explore Malaysia with Malee Hospitality</h3>
-              <h2>Book Your Dream Escape!</h2>
-              <p>
-                Get exclusive deals on our 3N Kuala Lumpur packages. Drop your
-                details below and our travel experts will design your perfect
-                itinerary.
-              </p>
-            </header>
+<div class="body-backdrop"></div>
 
-            <form id="travel-lead-form" class="travel-popup-fields">
-              <!-- Row 1: Full Width First Name -->
-              <div class="form-row full-width">
-                <div class="floating-input-group">
-                  <input
-                    type="text"
-                    id="popup-firstname"
-                    required
-                    placeholder=" "
-                  />
-                  <label for="popup-firstname">FirstName *</label>
-                </div>
-              </div>
+ 
 
-              <!-- Row 2: Split Columns for Phone and City -->
-              <div class="form-row split-width">
-                <div class="floating-input-group">
-                  <input type="tel" id="popup-phone" required placeholder=" " />
-                  <label for="popup-phone">Phone Number *</label>
-                </div>
-                <div class="floating-input-group">
-                  <input type="text" id="popup-city" required placeholder=" " />
-                  <label for="popup-city">City*</label>
-                </div>
-              </div>
 
-              <!-- Row 3: Full Width Email -->
-              <div class="form-row full-width">
-                <div class="floating-input-group">
-                  <input
-                    type="email"
-                    id="popup-email"
-                    required
-                    placeholder=" "
-                  />
-                  <label for="popup-email">Email *</label>
-                </div>
-              </div>
 
-              <!-- Submit Action Button -->
-              <button type="submit" class="travel-popup-submit-btn">
-                Submit Enquiry
-              </button>
-            </form>
 
-            <!-- Bottom Analytics Trust Badges -->
-            <footer class="travel-popup-badges">
-              <span>Expert Curation</span>
-              <span class="divider">|</span>
-              <span>Best Price Guaranteed</span>
-              <span class="divider">|</span>
-              <span>24/7 On-Tour Support</span>
-            </footer>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+
 
     <main class="main-wrapper">
       <section class="hero-slider-section">
@@ -183,7 +137,7 @@
           <div class="slide active">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Thailand Website images  - 1920X1080 px.png"
+                src="https://ik.imagekit.io/abiiiio/Thailand%20Website%20images%20%20-%201920X1080%20px.png"
                 alt="Beautiful temple in Thailand"
               />
             </div>
@@ -203,7 +157,7 @@
           <div class="slide">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Malaysia Website images  - 1920X1080.png"
+                src="https://ik.imagekit.io/abiiiio/Malaysia%20Website%20images%20%20-%201920X1080.png"
                 alt="Iconic Twin Towers in Malaysia"
               />
             </div>
@@ -223,7 +177,7 @@
           <div class="slide">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Singapore 2 Website images  - 1920X1080 px.png"
+                src="https://ik.imagekit.io/abiiiio/Singapore%202%20Website%20images%20%20-%201920X1080%20px.png"
                 alt="Iconic Twin Towers in Malaysia"
               />
             </div>
@@ -243,7 +197,7 @@
           <div class="slide">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Bangkok Website images  - 1920X1080.png"
+                src="https://ik.imagekit.io/abiiiio/Bangkok%20Website%20images%20%20-%201920X1080.png"
                 alt="Luxury Bangkok Skyline and Riverside Views"
               />
             </div>
@@ -264,7 +218,7 @@
           <div class="slide">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Singapore 2 Website images  - 1920X1080.png"
+                src="https://ik.imagekit.io/abiiiio/Singapore%202%20Website%20images%20%20-%201920X1080.png"
                 alt="Iconic Twin Towers in Malaysia"
               />
             </div>
@@ -285,7 +239,7 @@
           <div class="slide">
             <div class="slide-image-wrapper">
               <img
-                src="./images/Langkawi Website images  - 1920X1080.png"
+                src="https://ik.imagekit.io/abiiiio/Langkawi%20Website%20images%20%20-%201920X1080.png"
                 alt="Tropical Villa Resort in Bali"
               />
             </div>
@@ -307,7 +261,7 @@
             id="prevSlide"
             aria-label="Previous Slide"
           >
-            ‹
+        
           </button>
           <button
             class="slider-arrow next-arrow"
@@ -334,82 +288,15 @@
       </section>
     </main>
 
-    <!-- ---------------------------- -->
-    <main class="main-wrapper">
-      <section id="packages" class="section-container">
-        <div class="section-header">
-          <h2>Explore Asia’s Most Loved Destinations</h2>
-          <a href="#" class="btn-view-all">View All Destinations</a>
-        </div>
+    <div class="about-bgMain">
+      
 
-        <div class="packages-grid">
-          <div class="package-card" data-category="adventure">
-            <div class="card-img-holder">
-              <img
-                src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80"
-                alt="Ornate spires and golden roofs of the Grand Palace temple complex in Bangkok, Thailand"
-              />
-            </div>
-            <div class="card-body">
-              <div class="meta-row">
-                <span class="badge-category">🇹🇭 Thailand</span>
-              </div>
-              <h3>Thailand Experience</h3>
-              <p class="itinerary-snippet">
-                Experience vibrant Bangkok, tropical Phuket, beautiful Krabi,
-                and the nightlife of Pattaya.
-              </p>
-              <div class="badge green-badge">Best Seller</div>
-            </div>
-          </div>
-
-          <div class="package-card" data-category="honeymoon">
-            <div class="card-img-holder">
-              <img
-                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80"
-                alt="Luxury thatch roof resort villa overlooking a tropical jungle valley pool in Ubud, Bali"
-              />
-            </div>
-            <div class="card-body">
-              <div class="meta-row">
-                <span class="badge-category">🇮🇩 Bali</span>
-              </div>
-              <h3>Bali Getaways</h3>
-              <p class="itinerary-snippet">
-                Enjoy stunning beaches, ATV adventures, waterfalls, temples, and
-                unforgettable island experiences.
-              </p>
-              <div class="badge green-badge">Trending</div>
-            </div>
-          </div>
-
-          <div class="package-card" data-category="family">
-            <div class="card-img-holder">
-              <img
-                src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80"
-                alt="Futuristic modern architectural structures of Marina Bay Sands skyline illuminated during sunset in Singapore"
-              />
-            </div>
-            <div class="card-body">
-              <div class="meta-row">
-                <span class="badge-category">🇸🇬 Singapore</span>
-              </div>
-              <h3>Singapore Modernity</h3>
-              <p class="itinerary-snippet">
-                Discover futuristic attractions, luxury shopping, theme parks,
-                and world-famous experiences.
-              </p>
-              <div class="badge green-badge">Family Favorite</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+<main class="main-wrapper">
       <section class="about-section">
         <div class="about-grid">
           <div class="about-img-holder">
             <img
-              src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80"
+              src="https://ik.imagekit.io/abiiiio/Phuket.png?updatedAt=1781088916708"
               alt="Beautiful iconic tiered temple gates over dark water in Bali, Indonesia"
             />
           </div>
@@ -428,38 +315,227 @@
           </div>
         </div>
       </section>
+    </main>
+    </div>
 
-      <section class="why-section">
-        <h2 class="center-title">Travel Made Easy, Affordable & Memorable</h2>
-        <p class="center-subtitle">Why global travelers trust our services</p>
-        <div class="why-grid">
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">✈️</div>
-            <h3>Customized Holiday Packages</h3>
-            <p>
-              Tailor-made itineraries designed to match your budget, interests,
-              and travel style.
-            </p>
+    <!-- ---------------------------- -->
+    <main class="main-wrapper">
+      <section id="packages" class="section-container">
+        <div class="section-header">
+          <h2>Explore Asia’s Most Loved Destinations</h2>
+          <a href="package.html" class="btn-view-all">View All</a>
+        </div>
+
+        <div class="packages-grid">
+          <div class="package-card" data-category="city-explore">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Bangkok%20City%20Tour.png"
+                alt="Ornate spires and golden roofs of the Grand Palace temple complex in Bangkok, Thailand"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇹🇭 Bangkok</span>
+              </div>
+              <h3>Bangkok City Exploration</h3>
+              <p class="itinerary-snippet">
+                Discover the majestic Grand Palace, ride an iconic tuk-tuk
+                through vibrant streets, shop at floating markets, and taste
+                world-famous street food.
+              </p>
+              <div class="badge green-badge">Best Seller</div>
+            </div>
           </div>
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">🌏</div>
-            <h3>Destination Experts</h3>
-            <p>
-              Local expertise across Thailand, Bali, Singapore, Malaysia, and
-              other top Asian destinations.
-            </p>
+
+
+
+          <div class="package-card" data-category="city-break">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Malaysia%20Website%20images%20%20-%201920X1080.png"
+                alt="The iconic Petronas Twin Towers towering over the modern Kuala Lumpur skyline at dusk"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇲🇾 Kuala Lumpur</span>
+              </div>
+              <h3>Kuala Lumpur Escapes</h3>
+              <p class="itinerary-snippet">
+                Explore the iconic Petronas Twin Towers, vibrant street food
+                markets, historic Batu Caves, and world-class rooftop bars.
+              </p>
+              <div class="badge green-badge">Trending</div>
+            </div>
           </div>
-          <div class="why-card">
-            <div class="why-icon" aria-hidden="true">🤝</div>
-            <h3>Trusted Travel Support</h3>
-            <p>
-              From visa guidance to airport transfers, our team supports you
-              throughout your journey.
-            </p>
+
+          <div class="package-card" data-category="corporate">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Malaysia%20Website%20images%20%20-%201920X1080.png"
+                alt="Traditional Thai longtail boat floating on crystal clear turquoise water with dramatic limestone cliffs in Phuket"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇹🇭 Phuket</span>
+              </div>
+              <h3>Phuket Paradise</h3>
+              <p class="itinerary-snippet">
+                Relax on pristine white-sand beaches, cruise through the
+                breathtaking Phi Phi Islands, and immerse yourself in vibrant
+                night markets.
+              </p>
+              <div class="badge green-badge">Trending</div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="honeymoon">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Langkawi%20Website%20images%20%20-%201920X1080.png"
+                alt="Scenic aerial view of tropical islands and turquoise ocean waters in Langkawi, Malaysia"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇲🇾 Langkawi</span>
+              </div>
+              <h3>Langkawi Island Retreat</h3>
+              <p class="itinerary-snippet">
+                Discover the breathtaking Sky Bridge, cruise through lush
+                coastal mangroves, and unwind on duty-free paradise beaches.
+              </p>
+              <div class="badge green-badge">Trending</div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="honeymoon">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Hua%20Hin%20Thailand.png"
+                alt="Luxury beachfront resort swimming pool lined with palm trees overlooking the ocean in Hua Hin"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇹🇭 Hua Hin</span>
+              </div>
+              <h3>Hua Hin Getaways</h3>
+              <p class="itinerary-snippet">
+                Experience a seamless blend of seaside relaxation, vibrant night
+                markets, historic royal palaces, and premier golf courses.
+              </p>
+              <div class="badge green-badge">Trending</div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="family">
+            <div class="card-img-holder">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Singapore%203%20Website%20images%20%20-%201920X1080%20px.png"
+                alt="Futuristic modern architectural structures of Marina Bay Sands skyline illuminated during sunset in Singapore"
+              />
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="badge-category">🇸🇬 Singapore</span>
+              </div>
+              <h3>Singapore Modernity</h3>
+              <p class="itinerary-snippet">
+                Discover futuristic attractions, luxury shopping, theme parks,
+                and world-famous experiences.
+              </p>
+              <div class="badge green-badge">Family Favorite</div>
+            </div>
           </div>
         </div>
       </section>
+    </main>
 
+    <!-- <hr class="section-divider" /> --
+
+<!--    
+      <main class="main-wrapper">
+        <section class="why-section">
+          <h2 class="center-title">Travel Made Easy, Affordable & Memorable</h2>
+          <p class="center-subtitle">Why global travelers trust our services</p>
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">✈️</div>
+              <h3>Customized Holiday Packages</h3>
+              <p>
+                Tailor-made itineraries designed to match your budget,
+                interests, and travel style.
+              </p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">🌏</div>
+              <h3>Destination Experts</h3>
+              <p>
+                Local expertise across Thailand, Bali, Singapore, Malaysia, and
+                other top Asian destinations.
+              </p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">🤝</div>
+              <h3>Trusted Travel Support</h3>
+              <p>
+                From visa guidance to airport transfers, our team supports you
+                throughout your journey.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main> -->
+    </div>
+
+    <div class="color-wrapper" id="bg-white">
+      <main class="main-wrapper">
+        <section class="why-section">
+          <h2 class="center-title">Travel Made Easy, Affordable & Memorable</h2>
+          <p class="center-subtitle">Why global travelers trust our services</p>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">
+                <i class="fa-solid fa-plane-departure"></i>
+              </div>
+              <h3>Customized Holiday Packages</h3>
+              <p>
+                Tailor-made itineraries designed to match your budget,
+                interests, and travel style.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <h3>Destination Experts</h3>
+              <p>
+                Local expertise across Thailand, Bali, Singapore, Malaysia, and
+                other top Asian destinations.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon" aria-hidden="true">
+                <i class="fa-solid fa-handshake-angle"></i>
+              </div>
+              <h3>Trusted Travel Support</h3>
+              <p>
+                From visa guidance to airport transfers, our team supports you
+                throughout your journey.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <main class="main-wrapper">
       <section
         id="legacy-adventure-section"
         class="mh-main-section scroll-reveal"
@@ -486,7 +562,7 @@
                   />
                 </svg>
               </div>
-              <span class="mh-stat-number" data-target="10000">0</span>
+              <span class="mh-stat-number" data-target="20000">0</span>
               <span class="mh-stat-label">Happy Guests</span>
             </div>
 
@@ -525,7 +601,7 @@
                   ></path>
                 </svg>
               </div>
-              <span class="mh-stat-number" data-target="2000">0</span>
+              <span class="mh-stat-number" data-target="3000">0</span>
               <span class="mh-stat-label">Tours Completed</span>
             </div>
 
@@ -571,142 +647,12 @@
           </div>
         </div>
       </section>
+    </main>
 
-      <!-- Popup code starts from here  -->
-      <!-- Floating Sticky Sidebar Trigger Button -->
-      <button
-        id="dream-trip-trigger-btn"
-        class="dream-trip-sticky-btn"
-        aria-label="Plan your dream trip"
-      >
-        Plan Your Dream Trip
-      </button>
-
-      <!-- Dream Trip Modal Planner Overlay Container -->
-      <div id="dream-trip-popup-overlay" class="dream-modal-overlay">
-        <div class="dream-modal-card">
-          <!-- Close Square Badge button -->
-          <button
-            id="close-dream-modal"
-            class="dream-modal-close-x"
-            aria-label="Close modal"
-          >
-            &times;
-          </button>
-
-          <div class="dream-modal-wrapper">
-            <!-- Left Side Canvas Graphic Banner -->
-            <div class="dream-modal-image-side">
-              <!-- Replace with your cropped Taj Mahal banner graphic asset -->
-              <img
-                src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80"
-                alt="Plan Your Dream Trip Destination"
-              />
-            </div>
-
-            <!-- Right Side Form Content Grid -->
-            <div class="dream-modal-form-side">
-              <h2>Plan Your Dream Trip</h2>
-
-              <form id="dream-trip-planner-form" class="dream-form-grid">
-                <!-- Row 1 -->
-                <div class="dream-form-row">
-                  <input type="text" placeholder="Full Name*" required />
-                  <input type="email" placeholder="Email Address*" required />
-                </div>
-
-                <!-- Row 2 -->
-                <div class="dream-form-row">
-                  <input type="text" placeholder="Enter Country *" required />
-                  <!-- Country Dialing Code Field Group Mockup -->
-                  <div class="mock-phone-input-group">
-                    <span class="mock-flag">🇮🇳</span>
-                    <span class="mock-prefix">+91</span>
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      required
-                      style="
-                        border: none;
-                        padding: 0;
-                        margin-left: 8px;
-                        width: 100%;
-                      "
-                    />
-                  </div>
-                </div>
-
-                <!-- Row 3 -->
-                <div class="dream-form-row">
-                  <input type="text" placeholder="City or State*" />
-                  <input
-                    type="text"
-                    placeholder="Budget per Person (e.g. 12,000)"
-                  />
-                </div>
-
-                <!-- Row 4 -->
-                <div class="dream-form-row">
-                  <input
-                    type="number"
-                    placeholder="No. of Travellers*"
-                    min="1"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Preferred Travel Month & Year * Example: Jul 2026"
-                    required
-                  />
-                </div>
-
-                <!-- Row 5 -->
-                <div class="dream-form-row">
-                  <input type="text" placeholder="Arrival City*" />
-                  <input type="text" placeholder="Departure City*" />
-                </div>
-
-                <!-- Full Width Requirement Textarea Box -->
-                <div class="dream-form-full">
-                  <textarea
-                    placeholder="Describe your travel requirement*"
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-
-                <!-- Mock Google reCAPTCHA Verification Box Component -->
-                <div class="dream-recaptcha-mock">
-                  <div class="recaptcha-left">
-                    <input
-                      type="checkbox"
-                      id="mock-captcha-checkbox"
-                      required
-                    />
-                    <label for="mock-captcha-checkbox">I'm not a robot</label>
-                  </div>
-                  <div class="recaptcha-right">
-                    <div class="captcha-icon">&#8635;</div>
-                    <span>reCAPTCHA</span>
-                  </div>
-                </div>
-
-                <!-- Deep Navy Submit Button with Inline Arrow -->
-                <button type="submit" class="dream-submit-btn">
-                  <span>Submit</span>
-                  <span class="arrow-symbol">&rarr;</span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- popup code ends here -->
-
-      <!-- Google Reviews Testimonials Section -->
+    <div class="color-wrapper" id="bg-white">
       <section
         id="google-reviews-section"
-        class="mh-reviews-section scroll-reveal"
+        class="mh-reviews-section scroll-reveal visible is-visible is-loaded"
       >
         <!-- Header Top Row -->
         <div class="mh-reviews-header">
@@ -730,7 +676,7 @@
 
           <!-- Right Side: CTA Button & Relocated Arrow Controls -->
           <div class="mh-header-controls-wrapper">
-            <a href="https://google.com" target="_blank" class="mh-google-btn"
+            <a href="https://maps.app.goo.gl/WV6Yzzr171Yu3ysLA" target="_blank" class="mh-google-btn"
               >Review us on Google</a
             >
 
@@ -741,14 +687,14 @@
                 class="mh-slider-arrow prev-arrow"
                 aria-label="Previous review"
               >
-                &#8249;
+                ‹
               </button>
               <button
                 id="next-review-btn"
                 class="mh-slider-arrow next-arrow"
                 aria-label="Next review"
               >
-                &#8250;
+                ›
               </button>
             </div>
           </div>
@@ -757,125 +703,126 @@
         <!-- Slider Wrapper Control Viewport -->
         <div class="mh-slider-viewport">
           <!-- Carousel Track Containment Layer -->
-          <div id="reviews-track" class="mh-reviews-track">
+          <div
+            id="reviews-track"
+            class="mh-reviews-track"
+            style="transform: translateX(0px)"
+          >
             <!-- Card 1 -->
             <div class="mh-review-card">
               <div class="mh-card-header">
                 <div class="mh-user-avatar avatar-l">
-                  L
+                  S
                   <div class="mini-g-badge">G</div>
                 </div>
                 <div class="mh-user-info">
-                  <h4>
-                    Laura Cioni <span class="verified-check">&#10004;</span>
-                  </h4>
-                  <span class="review-date">2 months ago</span>
+                  <h4>Sarvesh Gupta<span class="verified-check">✔</span></h4>
+                  <span class="review-date">1 Year ago</span>
                 </div>
               </div>
               <div class="card-stars">★★★★★</div>
               <p class="review-text">
-                March 2026. We visited Karnataka—with a few stops in Kerala and
-                Tamil Nadu—on a tour of about 15 days. Cholan Tour provided us
-                with a car and driver, an Italian-...
+                Great trip planner. I enjoyed a lot in my vacation…it’s my 3rd trip with Malee hospitality, thanks to Malee and specially Ms Simran who did all the efforts to make my Singapore family vacation best. Their pricing is best always as I compare with many known travel agency before finalise. On time and quick response throughout journey, well taken care.
               </p>
-              <button class="read-more-btn">Read more</button>
+              <button class="read-more-btn" onclick="window.location.href='https://maps.app.goo.gl/LqKE5gYc9Sbikj1N6';">Read more</button>
             </div>
 
             <!-- Card 2 -->
             <div class="mh-review-card">
               <div class="mh-card-header">
                 <div class="mh-user-avatar avatar-k">
-                  K
+                  A
                   <div class="mini-g-badge">G</div>
                 </div>
                 <div class="mh-user-info">
-                  <h4>
-                    Kanchan Kapoor <span class="verified-check">&#10004;</span>
-                  </h4>
-                  <span class="review-date">2 months ago</span>
+                  <h4>Dr Aparna Sharma <span class="verified-check">✔</span></h4>
+                  <span class="review-date">6 Months ago</span>
                 </div>
               </div>
               <div class="card-stars">★★★★★</div>
               <p class="review-text">
-                Excellent service. They customized private tour plan very
-                efficiently. Team member are very cooperative.
+                Incredible Phuket and Krabi trip organised by Malee....everything nd every minute was pre planned....they looked after us, took care of our needs and supported each nd every member of the group...Special thanks goes to Mr Harsh Wardhan...never seen a trip advisor and guide like him before though we are frequent travellers and have travelled around the world...i convey my sincere thanks to Thai group managers too (JoyJoy nd others) extremely helpful, jovious and best coordinators I should say...thanks once again nd would like to travel more countries with you
               </p>
-              <button class="read-more-btn">Read more</button>
+              <button class="read-more-btn" onclick="window.location.href='https://maps.app.goo.gl/hadLAMs7BDKHaM8z7';">Read more</button>
             </div>
+
+
+            
 
             <!-- Card 3 -->
             <div class="mh-review-card">
               <div class="mh-card-header">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
-                  alt="vinn oly t"
-                  class="mh-user-img-avatar"
-                />
+                <div class="mh-user-avatar avatar-k">
+                  A
+                  <div class="mini-g-badge">G</div>
+                </div>
                 <div class="mh-user-info">
-                  <h4>
-                    vinn oly t <span class="verified-check">&#10004;</span>
-                  </h4>
-                  <span class="review-date">2 months ago</span>
+                  <h4>Ajeet Kumar Jain<span class="verified-check">✔</span></h4>
+                  <span class="review-date">2 Months ago</span>
                 </div>
               </div>
               <div class="card-stars">★★★★★</div>
               <p class="review-text">
-                Very approachable. Instant reply and we'll organised
+                It was amazing they are very cooperative & each every thing they have done completely as per given itinerary make’s lots of fun with good memories.
               </p>
-              <button class="read-more-btn">Read more</button>
+              <button class="read-more-btn" onclick="window.location.href='https://maps.app.goo.gl/8RiCoFJPRueSk5657';">Read more</button>
+              
             </div>
 
-            <!-- Card 4 -->
+
+             <!-- Card 4 -->
             <div class="mh-review-card">
               <div class="mh-card-header">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
-                  alt="jai kuma"
-                  class="mh-user-img-avatar"
-                />
+                <div class="mh-user-avatar avatar-k">
+                  J
+                  <div class="mini-g-badge">G</div>
+                </div>
                 <div class="mh-user-info">
-                  <h4>jai kuma <span class="verified-check">&#10004;</span></h4>
+                  <h4>Jyoti verma <span class="verified-check">✔</span></h4>
                   <span class="review-date">3 months ago</span>
                 </div>
               </div>
               <div class="card-stars">★★★★★</div>
               <p class="review-text">
-                The first time with this tours really safe with the driver my
+               The first time with this tours really safe with the driver my
                 next trip will be booked again
               </p>
-              <button class="read-more-btn">Read more</button>
+              <button class="read-more-btn" onclick="window.location.href='https://maps.app.goo.gl/hadLAMs7BDKHaM8z7';">Read more</button>
             </div>
 
             <!-- Card 5 -->
             <div class="mh-review-card">
               <div class="mh-card-header">
                 <div class="mh-user-avatar avatar-s">
-                  S
+                  V
                   <div class="mini-g-badge">G</div>
                 </div>
                 <div class="mh-user-info">
                   <h4>
-                    samuel george <span class="verified-check">&#10004;</span>
-                  </h4>
-                  <span class="review-date">3 months ago</span>
+Vikas Gandhi <span class="verified-check">✔</span></h4>
+                  <span class="review-date">9 months ago</span>
                 </div>
               </div>
               <div class="card-stars">★★★★★</div>
               <p class="review-text">
-                Enjoyed the trip very much this is the 2nd time we are using
-                Cholan tours and my family and I truly enjoyed it. Vinoy
-                arranged everything very well, our trip to Munnar,...
+               Excellent coordination and great hospitality.  Keep it up...
               </p>
-              <button class="read-more-btn">Read more</button>
+              <button class="read-more-btn" onclick="window.location.href='https://maps.app.goo.gl/8MMzzP4ELd62MuU7A';">Read more</button>
             </div>
           </div>
         </div>
-      </section>
+          </div>
+        </div>
+      </section> 
 
+    </div> 
+
+
+     <main class="main-wrapper pt">
       <section class="faq-section">
         <div class="section-header">
           <h2>Frequently Asked Questions</h2>
-          <a href="#" class="btn-view-all">View All FAQs</a>
+          <a href="faqs.html" class="btn-view-all">View All FAQs</a>
         </div>
         <div class="faq-accordion-container">
           <div class="accordion-item">
@@ -985,149 +932,322 @@
         </div>
       </section>
     </main>
-
-    <footer id="contact" class="immersive-footer">
-      <div class="footer-hero-cta">
-        <h2>Start Planning Your Next Adventure</h2>
-        <p>Reach out directly to coordinate your tour layout.</p>
-      </div>
-
-      <div class="contact-box-grid">
-        <div class="contact-pill-item">
-          <h5>📍 Office Address</h5>
-          <p>
-            02nd Floor, Next To Chamnan Phenjati Business Centre, Rama IX Rd,
-            Huai Khwang, Bangkok 10310
-          </p>
+      
+      <footer id="contact" class="pt-contact immersive-footer">
+      <div class="footer-inner-container"> 
+        
+        <div class="footer-hero-cta">
+          <h2>Start Planning Your Next Adventure</h2>
+          <p>Reach out directly to coordinate your tour layout.</p>
         </div>
-        <div class="contact-pill-item">
-          <h5>📞 Call Us</h5>
-          <p>Thailand: +66 63 836 0210<br />India: +91 80776 05404</p>
-        </div>
-        <div class="contact-pill-item">
-          <h5>📧 Email Us</h5>
-          <p>Ops@maleehospitality.asia<br />Delops2@maleehospitality.asia</p>
-        </div>
-        <div class="contact-pill-item">
-          <h5>🌐 Website</h5>
-          <p>www.maleehospitality.asia</p>
-        </div>
-      </div>
 
-      <div class="footer-divider"></div>
-
-      <div class="footer-links-container">
-        <div class="brand-column">
-          <div class="footer-logo">Malee Hospitality</div>
-          <p>
-            Highly affordable. Professionally managed. Truly unforgettable
-            travel management across Southeast Asia destinations.
-          </p>
-
-          <div class="footer-social-wrapper">
-            <a
-              href="https://www.facebook.com/malee.hospitality.7/"
-              class="social-icon-link"
-              aria-label="Follow Malee Hospitality on Facebook"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/maleehospitality_/"
-              class="social-icon-link"
-              aria-label="Follow Malee Hospitality on Instagram"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://in.linkedin.com/company/malee-hospitality-dmc"
-              class="social-icon-link"
-              aria-label="Follow Malee Hospitality on LinkedIn"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://in.pinterest.com/maleehospitalityofficial/"
-              class="social-icon-link"
-              aria-label="Follow Malee Hospitality on Pinterest"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"
-                />
-              </svg>
-            </a>
+        <div class="contact-box-grid">
+          <div class="contact-pill-item">
+            <h5>📍 Office Address</h5>
+            <p>02nd Floor, Next To Chamnan Phenjati Business Centre, Rama IX Rd, Huai Khwang, Bangkok 10310</p>
+          </div>
+          <div class="contact-pill-item">
+            <h5>📞 Call Us</h5>
+            <p>Thailand: +66 63 836 0210<br />India: +91 80776 05404</p>
+          </div>
+          <div class="contact-pill-item">
+            <h5>📧 Email Us</h5>
+            <p>Ops@maleehospitality.asia<br />Delops2@maleehospitality.asia</p>
+          </div>
+          <div class="contact-pill-item">
+            <h5>🌐 Website</h5>
+            <p>www.maleehospitality.asia</p>
           </div>
         </div>
 
-        <div class="links-column">
-          <h4>Top Destinations</h4>
-          <a href="#">Thailand</a>
-          <a href="#">Singapore</a>
-          <a href="#">Malaysia</a>
-          <a href="#">Bali (Indonesia)</a>
-          <a href="#">Vietnam</a>
+        <div class="footer-divider"></div>
+
+        <div class="footer-links-container">
+          <div class="brand-column">
+            <div class="footer-logo">Malee Hospitality</div>
+            <p>Highly affordable. Professionally managed. Truly unforgettable travel management across Southeast Asia destinations.</p>
+
+            <div class="footer-social-wrapper">
+              <a href="https://www.facebook.com/malee.hospitality.7/" class="social-icon-link" aria-label="Follow Malee Hospitality on Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/maleehospitality_/" class="social-icon-link" aria-label="Follow Malee Hospitality on Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              </a>
+              <a href="https://in.linkedin.com/company/malee-hospitality-dmc" class="social-icon-link" aria-label="Follow Malee Hospitality on LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://in.pinterest.com/maleehospitalityofficial/" class="social-icon-link" aria-label="Follow Malee Hospitality on Pinterest" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="links-column">
+            <h4>Top Destinations</h4>
+            <a href="#">Thailand</a>
+            <a href="#">Singapore</a>
+            <a href="#">Malaysia</a>
+          </div>
+
+          <div class="links-column">
+            <h4>Company Info</h4>
+            <a href="index.html">About us</a>
+            <a href="#packages">Packages</a>
+            <a href="contact.html">Contact</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+
+          <div class="links-column">
+            <h4>Legal & Trust</h4>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-conditions.html">Terms & Conditions</a>
+            <a href="cancellation-refund.html">Cancellation Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+          </div>
+
+          <div class="links-column">
+            <h4>Premium Standards</h4>
+            <p style="font-size: 13px; color: #a0aec0; line-height: 1.6">
+              ⭐ Premium Hospitality<br />⭐ Visa Documentation Support<br />⭐ Localized DMC Expertise
+            </p>
+          </div>
         </div>
 
-        <div class="links-column">
-          <h4>Company Info</h4>
-          <a href="index.html">About us</a>
-          <a href="#packages">Packages</a>
-          <a href="contact.html">Contact</a>
-          <a href="gallery.html">Gallery</a>
+        <div class="footer-bottom">
+          <div>© 2026 Malee Hospitality</div>
+          <div class="legal-links-column">
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-conditions.html">Terms</a>
+            <a href="cancellation-refund.html">Refunds</a>
+          </div>
+          <div>Travel smart. Travel seamlessly. Crafted with absolute care.</div>
         </div>
-
-        <div class="links-column">
-          <h4>Legal & Trust</h4>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-conditions.html">Terms & Conditions</a>
-          <a href="cancellation-refund.html">Cancellation Policy</a>
-          <a href="disclaimer.html">Disclaimer</a>
-        </div>
-
-        <div class="links-column">
-          <h4>Premium Standards</h4>
-          <p style="font-size: 13px; color: #a0aec0; line-height: 1.6">
-            ⭐ Premium Hospitality<br />⭐ Visa Documentation Support<br />⭐
-            Localized DMC Expertise
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-divider"></div>
-
-      <div class="footer-bottom">
-        <div>© 2026 Malee Hospitality</div>
-        <div class="legal-links-column">
-          <a href="privacy-policy.html">Privacy</a>
-          <a href="terms-conditions.html">Terms</a>
-          <a href="cancellation-refund.html">Refunds</a>
-        </div>
-        <div>Travel smart. Travel seamlessly. Crafted with absolute care.</div>
-      </div>
+      </div> 
     </footer>
+
+      
+    
+   <!-- Travel Inquiry Popup Overlay -->
+    <div id="travel-popup-overlay" class="travel-popup-overlay">
+      <div class="travel-popup-card">
+        <!-- Overlapping Circular Close Button -->
+        <button
+          id="close-travel-popup"
+          class="travel-popup-close-btn"
+          aria-label="Close popup"
+        >
+          &times;
+        </button>
+
+        <div class="travel-popup-container">
+          <!-- Left Side: Malaysia Package Image Banner -->
+          <div class="travel-popup-banner">
+            <!-- Using your new verified flyer file -->
+            <img
+              src="https://ik.imagekit.io/abiiiio/Popup%20Image%201.png"
+              alt="Malee Hospitality Malaysia Tour Package Banner"
+            />
+          </div>
+
+          <!-- Right Side: Content & Lead Form -->
+          <div class="travel-popup-form-side">
+            <header class="travel-popup-header">
+              <h3>Explore with Malee Hospitality</h3>
+              <h2>Book Your Dream Escape!</h2>
+              <p>
+                Get exclusive deals on our 3N Kuala Lumpur packages. Drop your
+                details below and our travel experts will design your perfect
+                itinerary.
+              </p>
+            </header>
+
+            <form id="travel-lead-form" class="travel-popup-fields">
+              <!-- Row 1: Full Width First Name -->
+              <div class="form-row full-width">
+                <div class="floating-input-group">
+                  <input
+                    type="text"
+                    id="popup-firstname"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="popup-firstname">First Name *</label>
+                </div>
+              </div>
+
+              <!-- Row 2: Split Columns for Phone and City -->
+              <div class="form-row split-width">
+                <div class="floating-input-group">
+                  <input type="tel" id="popup-phone" required placeholder=" " />
+                  <label for="popup-phone">Phone Number *</label>
+                </div>
+                <div class="floating-input-group">
+                  <input type="text" id="popup-city" required placeholder=" " />
+                  <label for="popup-city">City*</label>
+                </div>
+              </div>
+
+              <!-- Row 3: Full Width Email -->
+              <div class="form-row full-width">
+                <div class="floating-input-group">
+                  <input
+                    type="email"
+                    id="popup-email"
+                    required
+                    placeholder=" "
+                  />
+                  <label for="popup-email">Email *</label>
+                </div>
+              </div>
+
+              <!-- Submit Action Button -->
+              <button type="submit" class="travel-popup-submit-btn">
+                Submit Enquiry
+              </button>
+            </form>
+
+            <!-- Bottom Analytics Trust Badges -->
+            <footer class="travel-popup-badges">
+              <span>Expert Curation</span>
+              <span class="divider">|</span>
+              <span>Best Price Guaranteed</span>
+              <span class="divider">|</span>
+              <span>24/7 On-Tour Support</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Code END here  -->
+     <!-- Popup code starts from here  -->
+    <!-- Floating Sticky Sidebar Trigger Button -->
+    <button id="floating-dream-btn" class="floating-dream-btn">
+  <span class="btn-text">Plan Your Dream Trip</span>
+</button>
+    
+
+    <!-- Dream Trip Modal Planner Overlay Container -->
+  <div class="popup-main">
+    <div id="dream-trip-popup-overlay" class="dream-modal-overlay">
+      <div class="dream-modal-card">
+        <!-- Close Square Badge button -->
+        <button
+          id="close-dream-modal"
+          class="dream-modal-close-x"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+
+        <div class="dream-modal-wrapper">
+          <!-- Left Side Canvas Graphic Banner -->
+          <div class="dream-modal-image-side">
+            <!-- Replace with your cropped Taj Mahal banner graphic asset -->
+            <img
+              src="https://ik.imagekit.io/abiiiio/Popup%20Image%202.png"
+              alt="Plan Your Dream Trip Destination"
+            />
+          </div>
+
+          <!-- Right Side Form Content Grid -->
+          <div class="dream-modal-form-side">
+            <h2>Plan Your Dream Trip</h2>
+
+            <form id="dream-trip-planner-form" class="dream-form-grid">
+              <!-- Row 1 -->
+              <div class="dream-form-row">
+                <input type="text" placeholder="Full Name*" required />
+                <input type="email" placeholder="Email Address*" required />
+              </div>
+
+              <!-- Row 2 -->
+              <div class="dream-form-row">
+                <input type="text" placeholder="Enter Country *" required />
+                <!-- Country Dialing Code Field Group Mockup -->
+                <div class="mock-phone-input-group">
+                  <span class="mock-flag">🇮🇳</span>
+                  <span class="mock-prefix">+91</span>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                    style="
+                      border: none;
+                      padding: 0;
+                      margin-left: 8px;
+                      width: 100%;
+                    "
+                  />
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="dream-form-row">
+                <input type="text" placeholder="City or State*" />
+                <input
+                  type="text"
+                  placeholder="Budget per Person (e.g. 12,000)"
+                />
+              </div>
+
+              <!-- Row 4 -->
+              <div class="dream-form-row">
+                <input
+                  type="number"
+                  placeholder="No. of Travellers*"
+                  min="1"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Preferred Travel Month & Year * Example: Jul 2026"
+                  required
+                />
+              </div>
+
+              <!-- Row 5 -->
+              <div class="dream-form-row">
+                <input type="text" placeholder="Arrival City*" />
+                <input type="text" placeholder="Departure City*" />
+              </div>
+
+              <!-- Full Width Requirement Textarea Box -->
+              <div class="dream-form-full">
+                <textarea
+                  placeholder="Describe your travel requirement*"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Mock Google reCAPTCHA Verification Box Component -->
+              <div class="dream-recaptcha-mock">
+                <div class="recaptcha-left">
+                  <input type="checkbox" id="mock-captcha-checkbox" required />
+                  <label for="mock-captcha-checkbox">I'm not a robot</label>
+                </div>
+                <div class="recaptcha-right">
+                  <div class="captcha-icon">&#8635;</div>
+                  <span>reCAPTCHA</span>
+                </div>
+              </div>
+
+              <!-- Deep Navy Submit Button with Inline Arrow -->
+              <button type="submit" class="dream-submit-btn">
+                <span>Submit</span>
+                <span class="arrow-symbol">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- popup code ends here -->
 
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </body>
-</html>
+</html>   
