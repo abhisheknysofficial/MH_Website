@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discover Singapore | The Ultimate Guide</title>
+    <title>Discover Singapore | The Futuristic Lion City Guide</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap"
@@ -30,13 +30,13 @@
 
         <nav class="navigation-menu" aria-label="Main Navigation">
           <div class="nav-item">
-            <a href="index.html" class="nav-link active">HOME</a>
+            <a href="index.html" class="nav-link">HOME</a>
           </div>
 
           <div class="nav-item dropdown open">
             <a
               href="#"
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               aria-haspopup="true"
               aria-expanded="true"
             >
@@ -44,9 +44,9 @@
               <span class="arrow-indicator" aria-hidden="true">▼</span>
             </a>
             <div class="dropdown-menu">
-              <a href="#">Thailand</a>
-              <a href="#">Singapore</a>
-              <a href="#">Malaysia</a>
+              <a href="thailand.html">Thailand</a>
+              <a href="singapore.html">Singapore</a>
+              <a href="malaysia.html">Malaysia</a>
               <a href="destination.html">More</a>
             </div>
           </div>
@@ -83,8 +83,8 @@
 
     <nav class="mobile-nav">
       <ul class="nav-links">
-        <li><a href="https://maleehospitality.com/" class="active">Home</a></li>
-        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html" class="active">Destinations</a></li>
         <li><a href="package.html">Packages</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -94,212 +94,215 @@
 
     <div class="body-backdrop"></div>
 
-    <section class="hero">
+    <section class="hero hero-sg">
       <h1>Explore Singapore</h1>
       <p>
-        "A journey into the Lion City—where futuristic innovation meets a rich cultural tapestry."
+        "A dynamic city-state where futuristic innovation perfectly intertwines 
+        with vibrant, historic cultural enclaves."
       </p>
-      <a href="#about" class="scroll-down"
-        ><i class="fa-solid fa-chevron-down"></i
-      ></a>
+      <a href="#about" class="scroll-down">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
-
-    <section id="about" class="container">
-      <div class="section-header">
-        <h2>About Singapore</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            Once a colonial trading post, Singapore is now a thriving global financial hub and one of the world's most prosperous nations. Known as the Lion City, it is celebrated for its pristine streets, incredible safety, and a beautiful multicultural harmony of Chinese, Malay, Indian, and Eurasian communities.
-          </p>
-          <p>
-            From the futuristic supertrees of Gardens by the Bay to the vibrant, historic shophouses of Chinatown and Little India, Singapore is a masterclass in urban planning. It is a city-state where nature and architecture blend seamlessly, living up to its reputation as a true "City in a Garden."
-          </p>
-        </div>
-        <div class="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80"
-            alt="Singapore Marina Bay Sands and Skyline"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section">
-      <div class="container">
+  
+    <main class="main-wrapper">
+      <section id="about" class="container">
         <div class="section-header">
-          <h2>Why Visit Singapore?</h2>
+          <h2>About Singapore</h2>
           <div class="divider"></div>
         </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <i class="fa-solid fa-leaf"></i>
-            <h3>A City in a Garden</h3>
+        <div class="about-content">
+          <div class="about-text">
             <p>
-              Experience the perfect harmony of lush green spaces and cutting-edge urban design, from the iconic Gardens by the Bay to the UNESCO-listed Botanic Gardens.
+              Known affectionately as the "Lion City," Singapore is a global financial powerhouse and a paradigm of forward-thinking urban design. Celebrated worldwide as a "City in a Garden," it flawlessly incorporates lush, sweeping green infrastructure directly into its towering architectural skylines.
+            </p>
+            <p>
+              Beyond its futuristic façade lies a remarkably diverse cultural landscape. Singapore's historical roots shine brightly in vibrant neighborhoods like Chinatown, Little India, and Kampong Glam. It is a destination where hyper-efficient transport links, pristine streets, world-class entertainment hubs, and deeply layered heritage come together to create a seamless travel experience.
             </p>
           </div>
-          <div class="feature-card">
-            <i class="fa-solid fa-bowl-food"></i>
-            <h3>Hawker Culture & Fine Dining</h3>
-            <p>
-              Indulge in a melting pot of flavors. Savor world-class Michelin-starred cuisine or enjoy affordable, mouth-watering local dishes at historic hawker centers.
-            </p>
-          </div>
-          <div class="feature-card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>Unmatched Safety</h3>
-            <p>
-              Enjoy peace of mind in one of the safest, cleanest, and most efficiently run cities in the world, boasting a world-class public transit system.
-            </p>
+          <div class="about-image">
+            <img
+              src="https://ik.imagekit.io/abiiiio/Singapore%20City.png"
+              alt="Marina Bay Sands and Singapore Skyline"
+            />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="container">
-      <div class="section-header">
-        <h2>What to Do in Singapore</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="tabs-container">
-        <button class="tab-btn active" onclick="openTab(event, 'culture')">
-          Attractions & Icons
-        </button>
-        <button class="tab-btn" onclick="openTab(event, 'nature')">
-          Nature & Parks
-        </button>
-        <button class="tab-btn" onclick="openTab(event, 'beaches')">
-          Entertainment & Islands
-        </button>
-      </div>
-
-      <div id="culture" class="tab-content active">
-        <div class="activity-grid">
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1506506304505-df3c961e64ff?auto=format&fit=crop&w=600&q=80"
-              alt="Marina Bay Sands"
-            />
-            <div class="activity-info">
-              <h4>Discover Marina Bay Sands</h4>
+      <section class="why-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why Visit Singapore?</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <i class="fa-solid fa-city"></i>
+              <h3>Futuristic Architecture</h3>
               <p>
-                Marvel at the iconic ship-like architecture, visit the SkyPark observation deck, and enjoy breathtaking views of the city skyline.
+                Witness breathtaking, sustainable architectural triumphs that feel decades ahead of their time, ranging from gravity-defying skyways to climate-controlled bio-domes.
               </p>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1565552345-21d3f22588f4?auto=format&fit=crop&w=600&q=80"
-              alt="Chinatown Singapore"
-            />
-            <div class="activity-info">
-              <h4>Wander Chinatown & Little India</h4>
+            <div class="feature-card">
+              <i class="fa-solid fa-shield-halved"></i>
+              <h3>Unmatched Safety & Comfort</h3>
               <p>
-                Immerse yourself in rich heritage, vibrant colors, and aromatic spices in Singapore's historic cultural enclaves.
+                consistently ranked among the safest and cleanest places globally, Singapore offers a perfectly seamless, family-friendly environment backed by an incredibly intuitive transit network.
               </p>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80"
-              alt="ArtScience Museum"
-            />
-            <div class="activity-info">
-              <h4>Visit the ArtScience Museum</h4>
+            <div class="feature-card">
+              <i class="fa-solid fa-fire-burner"></i>
+              <h3>Global Culinary Fusion</h3>
               <p>
-                Uncover the fascinating intersection of art, science, and technology through immersive, cutting-edge exhibits.
+                Delight your palate across an elite culinary spectrum, moving effortlessly from humble, Michelin-recognized Hawker Centres to boundary-pushing, world-famous rooftop dining concepts.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="nature" class="tab-content">
-        <div class="activity-grid">
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1542157585-ef20bfcb3722?auto=format&fit=crop&w=600&q=80"
-              alt="Gardens by the Bay"
-            />
-            <div class="activity-info">
-              <h4>Gardens by the Bay</h4>
-              <p>
-                Walk beneath the awe-inspiring Supertrees and explore the massive, climate-controlled Flower Dome and Cloud Forest conservatories.
-              </p>
+      <section class="container">
+        <div class="section-header">
+          <h2>What to Do in Singapore</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="tabs-container">
+          <button class="tab-btn active gallery-filter-btn" onclick="openTab(event, 'culture')">
+            Futuristic Landmarks
+          </button>
+          <button class="tab-btn gallery-filter-btn" onclick="openTab(event, 'nature')">
+            Nature & Greenery
+          </button>
+          <button class="tab-btn gallery-filter-btn" onclick="openTab(event, 'beaches')">
+            Entertainment & Leisure
+          </button>
+        </div>
+
+        <div id="culture" class="tab-content active">
+          <div class="activity-grid">
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Gardens%20By%20the%20Bay.png"
+                alt="Gardens by the Bay Supertree Grove"
+              />
+              <div class="activity-info">
+                <h4>Marvel at Gardens by the Bay</h4>
+                <p>
+                  Stroll among the iconic, plant-covered Supertrees and venture inside the massive Flower Dome and Cloud Forest to see a towering indoor waterfall.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1564756515-d4e5f41053c2?auto=format&fit=crop&w=600&q=80"
-              alt="Singapore Botanic Gardens"
-            />
-            <div class="activity-info">
-              <h4>Singapore Botanic Gardens</h4>
-              <p>
-                Stroll through the lush, sprawling grounds of this UNESCO World Heritage site and admire the magnificent National Orchid Garden.
-              </p>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Marina%20Bay%20Sands.png"
+                alt="Marina Bay Sands Skypark View"
+              />
+              <div class="activity-info">
+                <h4>Visit Marina Bay Sands Skypark</h4>
+                <p>
+                  Ascend 57 levels above the city to enjoy a stunning 360-degree panoramic viewpoint over Singapore’s glittering coastal business hub.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1627914041763-71881ff110cb?auto=format&fit=crop&w=600&q=80"
-              alt="Night Safari"
-            />
-            <div class="activity-info">
-              <h4>Explore the Night Safari</h4>
-              <p>
-                Embark on an unforgettable nocturnal adventure at the world's first night zoo, observing fascinating wildlife in naturalistic habitats.
-              </p>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Singapore%20Chinatown.png"
+                alt="Chinatown Shophouses Singapore"
+              />
+              <div class="activity-info">
+                <h4>Explore Historic Heritage Enclaves</h4>
+                <p>
+                  Immerse yourself in the bustling alleys of Chinatown, view the vivid shopfronts of Little India, and visit historic temples all within minutes of each other.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="beaches" class="tab-content">
-        <div class="activity-grid">
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1561578332-9df72de70f6e?auto=format&fit=crop&w=600&q=80"
-              alt="Sentosa Island"
-            />
-            <div class="activity-info">
-              <h4>Thrills at Sentosa Island</h4>
-              <p>
-                Escape to Singapore's premier island resort destination, featuring pristine beaches, Universal Studios, and luxury beach clubs.
-              </p>
+        <div id="nature" class="tab-content">
+          <div class="activity-grid">
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Jewel%20Changi.png"
+                alt="Jewel Changi Airport Rain Vortex"
+              />
+              <div class="activity-info">
+                <h4>See the Jewel Rain Vortex</h4>
+                <p>
+                  Witness the world’s tallest indoor waterfall cascading seven stories down through a spectacular indoor forest pavilion at Jewel Changi Airport.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1585863777713-33d3c8c2537c?auto=format&fit=crop&w=600&q=80"
-              alt="Jewel Changi Airport"
-            />
-            <div class="activity-info">
-              <h4>Marvel at Jewel Changi</h4>
-              <p>
-                Experience the magic of the HSBC Rain Vortex, the world's tallest indoor waterfall, surrounded by a lush indoor forest.
-              </p>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Botanical%20Garden.png"
+                alt="Singapore Botanic Gardens Orchid"
+              />
+              <div class="activity-info">
+                <h4>Walk the Singapore Botanic Gardens</h4>
+                <p>
+                  Explore Singapore’s first UNESCO World Heritage site, featuring a sprawling sanctuary filled with thousands of vibrant, exotic orchid species.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="activity-card">
-            <img
-              src="https://images.unsplash.com/photo-1543085521-72cb5f6caec3?auto=format&fit=crop&w=600&q=80"
-              alt="Singapore Flyer"
-            />
-            <div class="activity-info">
-              <h4>Ride the Singapore Flyer</h4>
-              <p>
-                Take a scenic flight on Asia's largest giant observation wheel for panoramic views stretching as far as neighboring Malaysia.
-              </p>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Entrance_of_Night_Safari,_Singapor.jpg"
+                alt="Night Safari Singapore Tram"
+              />
+              <div class="activity-info">
+                <h4>Experience the Night Safari</h4>
+                <p>
+                  Board an open-air tram to safely observe nocturnal animals roaming freely within beautifully designed, natural geographic habitats.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div id="beaches" class="tab-content">
+          <div class="activity-grid">
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Universal%20Studios.jpg"
+                alt="Universal Studios Singapore Globe"
+              />
+              <div class="activity-info">
+                <h4>Enjoy Universal Studios Singapore</h4>
+                <p>
+                  Head to Sentosa Island to experience pulse-pounding rollercoasters, immersive cinematic sets, and family-oriented theme park entertainment.
+                </p>
+              </div>
+            </div>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Sentosa%20One%20Faber%20Group_Cable%20Car%20Image.jpg"
+                alt="Sentosa Island Siloso Beach Resort"
+              />
+              <div class="activity-info">
+                <h4>Relax on Sentosa's Golden Beaches</h4>
+                <p>
+                  Unwind at Siloso or Palawan beach, featuring energetic beachfront bars, soft sand, and specialized watersports hubs right on the island.
+                </p>
+              </div>
+            </div>
+            <div class="activity-card">
+              <img
+                src="https://ik.imagekit.io/abiiiio/Clarke%20Quay.png"
+                alt="Clarke Quay Riverside Evening"
+              />
+              <div class="activity-info">
+                <h4>Unwind at Clarke Quay</h4>
+                <p>
+                  Spend an evening alongside the Singapore River at a vibrant dining and entertainment district packed with colorful, illuminated historical warehouses.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer id="contact" class="immersive-footer">
       <div class="footer-inner-container">
@@ -348,11 +351,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"
-                  />
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
               </a>
               <a
                 href="https://www.instagram.com/maleehospitality_/"
@@ -361,11 +360,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
-                  />
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
               </a>
               <a
                 href="https://in.linkedin.com/company/malee-hospitality-dmc"
@@ -374,11 +369,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </a>
               <a
                 href="https://in.pinterest.com/maleehospitalityofficial/"
@@ -387,20 +378,16 @@
                 target="_blank"
                 rel="noopener"
               >
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"
-                  />
-                </svg>
+                <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.211-.174.256-.402.147-1.492-.692-2.425-2.871-2.425-4.617 0-3.76 2.735-7.214 7.874-7.214 4.134 0 7.346 2.953 7.346 6.886 0 4.112-2.591 7.419-6.19 7.419-1.209 0-2.344-.627-2.733-1.369l-.746 2.839c-.269 1.026-1 2.311-1.492 3.111 1.12.346 2.309.531 3.546.531 6.62 0 11.988-5.366 11.988-11.987C24.005 5.367 18.636 0 12.017 0z"/></svg>
               </a>
             </div>
           </div>
 
           <div class="links-column">
             <h4>Top Destinations</h4>
-            <a href="#">Thailand</a>
-            <a href="#">Singapore</a>
-            <a href="#">Malaysia</a>
+            <a href="thailand.html">Thailand</a>
+            <a href="singapore.html">Singapore</a>
+            <a href="malaysia.html">Malaysia</a>
           </div>
 
           <div class="links-column">

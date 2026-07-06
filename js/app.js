@@ -975,11 +975,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 
 
-
-
-
-
-
 document.querySelectorAll('.filter-pills-container .pill').forEach(pill => {
   pill.addEventListener('click', () => {
     const packagesSection = document.getElementById('packages');
@@ -991,3 +986,62 @@ document.querySelectorAll('.filter-pills-container .pill').forEach(pill => {
     }
   });
 });
+
+
+// Target the SVG favicon link element
+const favicon = document.getElementById('dynamic-favicon');
+
+/**
+ * Generates a dynamic favicon using an HTML5 Canvas
+ * @param {boolean} hasBadge - Controls whether a red notification dot is drawn
+ */
+function updateFavicon(hasBadge = false) {
+    // Create an off-screen canvas
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+
+    // 1. Draw the Main Icon Body (Blue Circle)
+    ctx.fillStyle = '#007bff';
+    ctx.beginPath();
+    ctx.arc(16, 16, 14, 0, 2 * Math.PI);
+    ctx.fill();
+    
+    // 2. Draw Text/Logo inside the icon
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('AI', 16, 16);
+
+    // 3. Conditional: Draw a red notification badge if true
+    if (hasBadge) {
+        ctx.fillStyle = '#ff4757';
+        ctx.beginPath();
+        // Positioned at the top right corner
+        ctx.arc(26, 6, 6, 0, 2 * Math.PI); 
+        ctx.fill();
+        
+        // White border around the badge to make it stand out
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+    }
+
+    // 4. Convert Canvas drawing to a Base64 Image string and apply to href
+    favicon.href = canvas.toDataURL('image/png');
+}
+
+// --- Event Listeners ---
+
+document.getElementById('btn-alert').addEventListener('click', () => {
+    updateFavicon(true); // Red dot active
+});
+
+document.getElementById('btn-clear').addEventListener('click', () => {
+    updateFavicon(false); // Clean standard icon
+});
+
+// Run automatically on page load to initialize the canvas favicon
+updateFavicon(false);

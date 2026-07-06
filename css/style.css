@@ -198,6 +198,7 @@ body {
 
 .contact-button:hover, .contact-button.active {
     background-color: var(--text-main);
+    background: linear-gradient(135deg, rgba(11, 26, 74, 0.92), rgba(29, 53, 87, 0.68));
     color: var(--bg-card) !important;
 }
 
@@ -6680,7 +6681,7 @@ body {
 /* Shared Immersive Visual Footer */
 .immersive-footer {
     background-color: #0B1A30;
-    background-image: linear-gradient(to bottom, rgba(11, 26, 48, 0.9), #060F1D), 
+    background-image: linear-gradient(135deg, rgba(11, 26, 74, 0.92), rgba(29, 53, 87, 0.68)), 
                       url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1500&q=80');
     background-size: cover;
     background-position: center;
@@ -6715,7 +6716,7 @@ body {
 }
 
 .contact-pill-item h5 { color: #e45d16; font-size: 13px; margin-bottom: 6px; }
-.contact-pill-item p { font-size: 12.5px; color: #E2E8F0; line-height: 1.4; }
+.contact-pill-item p { font-size: 14px; color: #E2E8F0; line-height: 1.4; }
 
 .footer-links-container {
     display: grid;
@@ -9294,7 +9295,7 @@ body {
       }
 
       /* Hero Section */
-      .hero {
+      .hero-th {
         height: 100vh;
         background:
           linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
@@ -9309,15 +9310,46 @@ body {
         padding: 0 20px;
       }
 
-      .hero h1 {
+      .hero-th{
+         background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1920&q=80")
+            center/cover;
+      }
+
+
+      .hero-my{
+         background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("https://etimg.etb2bimg.com/photo/116423616.cms")
+            center/cover;
+      }
+      
+       .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         color: var(--white);
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        color: #ffffff;
         font-size: 4rem;
         margin-bottom: 1rem;
         letter-spacing: 2px;
         text-transform: uppercase;
       }
 
+      .fa-chevron-down:before{
+        color: #ffffff;
+      }
+
       .hero p {
+        color: #ffffff;
         font-size: 1.2rem;
         max-width: 600px;
         margin-bottom: 2rem;
@@ -9357,11 +9389,13 @@ body {
 
       .about-text {
         flex: 1;
+        
       }
 
       .about-text p {
         margin-bottom: 1.5rem;
         font-size: 1.05rem;
+        text-align: center;
       }
 
       .about-image {
@@ -9398,19 +9432,27 @@ body {
         gap: 2rem;
       }
 
-      .feature-card {
-        text-align: center;
-        padding: 2rem;
-        border-radius: 8px;
-        transition: var(--transition);
-        border: 1px solid #eee;
-      }
+    .feature-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background-color: #fff; /* Ensures shadow renders correctly on a clean canvas */
+  
+  /* Force hardware acceleration for flawless animation processing */
+  will-change: transform, box-shadow, border-color; 
+  
+  /* 0.4 seconds with a custom cubic-bezier creates a premium, elastic easing effect */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
 
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        border-color: var(--gold);
-      }
+.feature-card:hover {
+  transform: translateY(-8px); /* Slightly reduced distance avoids sudden layout jerks */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* A richer shadow softens the float look */
+  border-color: var(--gold);
+}
 
       .feature-card i {
         font-size: 2.5rem;
@@ -9508,7 +9550,7 @@ body {
       }
 
       footer p {
-        opacity: 0.7;
+        opacity: 1;
         font-size: 0.9rem;
       }
 
@@ -9534,3 +9576,239 @@ body {
             background: #ffffff;
     padding: 10px;
     }
+
+    .footer-hero-cta p{
+      font-size: 16px;
+    }
+
+
+    #travel-popup-overlay, .travel-popup-banner{
+      display: none;
+    }
+
+    
+
+    /* 1. By default, ensure the dropdown container hides its absolute content */
+.dropdown {
+  position: relative;
+}
+
+/* 2. Hide the dropdown menu panel completely when the page first loads */
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
+/* 3. Display the dropdown ONLY when JavaScript appends the ".open" class to the parent wrapper */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* Optional: Rotate the visual toggle indicator arrow if desired when open */
+.dropdown.open .dropdown-toggle .arrow {
+  transform: rotate(180deg);
+}
+
+.nav-item .dropdown li{
+  display: none;
+  list-style: none;
+}
+
+
+/* Remove the bullet point and reset default padding/margin on navigation items */
+.nav-item {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+/* If your navigation menu is wrapped in a <ul> or <ol>, it's good practice to reset it too */
+.nav-links, .navbar-nav, .mobile-nav {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Decrease the size of the dropdown arrow */
+.dropdown-toggle .arrow {
+  font-size: 11px;         /* Adjust this value down if you want it even smaller */
+  display: inline-block;
+  vertical-align: middle;   /* Ensures it stays perfectly centered with the text */
+  margin-left: 4px;        /* Controls the spacing between the word and the arrow */
+  line-height: 1;
+}
+
+/* Container alignment and spacing */
+.gallery-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* Centers the filter pills horizontally */
+  padding: 20px 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; /* Clean modern font base */
+}
+
+/* Base style for all gallery filter buttons */
+.gallery-filter-btn {
+  background-color: #ffffff;
+  color: #0b1a4a; /* Deep navy text color */
+  border: 1px solid #e2e8f0; /* Subtle light gray border */
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600; /* Semi-bold text structure */
+  border-radius: 50px; /* Forces the perfect pill/rounded shape */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover and activation changes */
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02); /* Very soft minimal depth */
+}
+
+/* Hover effect for unselected pills */
+.gallery-filter-btn:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px); /* Slight lift feeling on hover */
+}
+
+/* The active/selected state style matching your design */
+.gallery-filter-btn.active {
+  background-color: #1d3557; /* Deep navy background */
+  color: #ffffff; /* White text */
+  border-color: #1d3557;
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.25); /* Elegant matching blue drop shadow */
+}
+
+
+
+/* Target the main section container */
+.stats-banner-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1500&q=80'); /* Replace with your image file name or link */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Creates a smooth, modern parallax scrolling effect */
+  padding: 80px 20px; /* Generates clean vertical breathing room */
+  border-radius: 16px; /* Matches the rounded structural borders in your screenshot */
+  overflow: hidden; /* Prevents the inner overlay from breaking out of rounded corners */
+  z-index: 1;
+}
+
+/* Creates the dark, elegant color overlay mask layer directly behind text items */
+.stats-banner-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(11, 26, 74, 0.92), rgba(29, 53, 87, 0.68)); /* Deep navy to steel blue gradient */
+  z-index: -1; /* Pushes the color mask layer cleanly behind your text contents */
+}
+
+/* Ensures layout inner contents float correctly over the new background layers */
+.stats-container {
+  position: relative;
+  z-index: 2;
+}
+
+section#about, .container {
+    DISPLAY: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1250px;
+    padding: 0 40px;
+        margin-top: 40px;
+        padding-bottom: 40px;
+}
+
+.hero-my {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('YOUR_MALAYSIA_HERO_IMAGE_URL') no-repeat center center/cover;
+}
+
+.hero-sg {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://ik.imagekit.io/abiiiio/Singapore%202%20Website%20images%20%20-%201920X1080.png?updatedAt=1780999101412') no-repeat center center/cover;
+}
+
+
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Control Card Container */
+.control-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 400px;
+}
+
+h1 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Interactive Buttons */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn.alert {
+    background-color: #ff4757;
+    color: white;
+}
+
+.btn.alert:hover {
+    background-color: #ff6b81;
+}
+
+.btn.clear {
+    background-color: #747d8c;
+    color: white;
+}
+
+.btn.clear:hover {
+    background-color: #a4b0be;
+}
